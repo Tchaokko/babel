@@ -41,12 +41,6 @@
     <ClCompile Include="loginscreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_loginscreen.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_loginscreen.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_loginscreen.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -65,12 +59,6 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fields.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Label.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

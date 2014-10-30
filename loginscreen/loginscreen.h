@@ -1,19 +1,35 @@
 #ifndef LOGINSCREEN_H
-#define LOGINSCREEN_H
+# define LOGINSCREEN_H
 
-#include <QtWidgets/QMainWindow>
-#include "ui_loginscreen.h"
+# include <QtWidgets/QApplication>
+# include <QtWidgets\QMainWindow>
+# include <QtWidgets\qlineedit.h>
+# include <QtWidgets\qboxlayout.h>
+# include <QtWidgets\qlabel.h>
+# include <QtCore\qstring.h>
+# include <QtWidgets\qpushbutton.h>
 
-class loginscreen : public QMainWindow
+class LoginScreen
 {
-	Q_OBJECT
-
 public:
-	loginscreen(QWidget *parent = 0);
-	~loginscreen();
+	LoginScreen();
+	~LoginScreen();
+	void	show();
 
 private:
-	Ui::loginscreenClass ui;
+	QGridLayout	*layout;
+	QWidget		*mainWidget;
+	QLineEdit	*logField;
+	QLineEdit	*pwdField;
+	QLabel		*logLabel;
+	QLabel		*pwdLabel;
+	QPushButton	*connectButton;
+	QPushButton	*signInButton;
+
+private:
+	void	initLabels();
+	void	initFields();
+	void	initButton();
 };
 
 #endif // LOGINSCREEN_H
