@@ -9,7 +9,7 @@ void	LoginScreen::show()
 	this->layout->addWidget(this->pwdField, 1, 1);
 	this->layout->addWidget(this->connectButton, 2, 0, 2, 0);
 	this->layout->addWidget(this->signInButton, 4, 0, 2, 0);
-	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(getInfo()));
+	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(logIn()));
 }
 
 void	LoginScreen::initButton()
@@ -18,15 +18,27 @@ void	LoginScreen::initButton()
 	this->signInButton = new QPushButton("Sign in");
 }
 
+void	LoginScreen::signIn()
+{
+}
+
+void	LoginScreen::logIn()
+{
+	this->mainWidget->close();
+	this->mainWidget = new QWidget(NULL);
+	QVBoxLayout		*lay = new QVBoxLayout(this->mainWidget);
+	QLabel			*PraticalJoke = new QLabel("Celui qui lit ca est un con");
+
+	lay->addWidget(PraticalJoke);
+	this->mainWidget->setLayout(lay);
+	this->mainWidget->show();
+
+}
+
 void	LoginScreen::getInfo()
 {
 	this->pass = this->pwdField->text();
 	this->log = this->logField->text();
-	std::cout << log.toStdString() << std::endl;
-	std::cout << "check" << std::endl;
-	std::cout << pass.toStdString() << std::endl;
-	std::cout << "check2" << std::endl;
-
 }
 void	LoginScreen::initLabels()
 {

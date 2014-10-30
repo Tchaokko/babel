@@ -33,9 +33,11 @@ private:
 	void	initLabels();
 	void	initFields();
 	void	initButton();
+	void	getInfo();
 
 public slots:
-	void	getInfo();
+	void	logIn();
+	void	signIn();
 };
 
 #endif // LOGINSCREEN_H
