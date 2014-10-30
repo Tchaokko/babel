@@ -9,14 +9,17 @@
 # include <QtCore\qstring.h>
 # include <QtWidgets\qpushbutton.h>
 
-class LoginScreen
+class LoginScreen : QObject
 {
+	Q_OBJECT
 public:
 	LoginScreen();
 	~LoginScreen();
 	void	show();
 
 private:
+	QString		log;
+	QString		pass;
 	QGridLayout	*layout;
 	QWidget		*mainWidget;
 	QLineEdit	*logField;
@@ -30,6 +33,9 @@ private:
 	void	initLabels();
 	void	initFields();
 	void	initButton();
+
+public slots:
+	void	getInfo();
 };
 
 #endif // LOGINSCREEN_H
