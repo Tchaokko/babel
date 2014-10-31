@@ -1,12 +1,10 @@
 #ifndef MAINMENU_H_
 # define MAINMENU_H_
-# include <QtWidgets\QApplication>
-# include <QtWidgets\QMainWindow>
-# include <qmenubar.h>
-# include <qstring.h>
+# include "APropos.h"
 
-class MainMenu
+class MainMenu : public QObject
 {
+	Q_OBJECT
 public:
 	MainMenu();
 	~MainMenu();
@@ -19,6 +17,11 @@ private:
 	QMenu		*menu;
 	QAction		*add;
 	QAction		*del;
+	QAction		*aPropos;
+	APropos		*info;
+
+private slots:
+	void	showAPropos();
 };
 
 #endif /* !MAINMENU_H_*/
