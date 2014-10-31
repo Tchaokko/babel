@@ -11,6 +11,7 @@ public:
 	MainMenu();
 	~MainMenu();
 	void	show();
+	QMainWindow *getWindow();
 
 private:
 	void	initMenuBar();

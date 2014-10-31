@@ -22,6 +22,9 @@
     <ClCompile Include="GeneratedFiles\qrc_loginscreen.cpp">
       <Filter>Garbage</Filter>
     </ClCompile>
+    <ClCompile Include="ListContact.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hash.h">
@@ -32,6 +35,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
       <Filter>Garbage</Filter>
+    </ClInclude>
+    <ClInclude Include="ListContact.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

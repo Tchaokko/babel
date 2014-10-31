@@ -5,6 +5,11 @@ void	MainMenu::show()
 	this->window->show();
 }
 
+QMainWindow *MainMenu::getWindow()
+{
+	return this->window;
+}
+
 void	MainMenu::initMenuBar()
 {
 	this->menu = this->window->menuBar()->addMenu("Contact");
