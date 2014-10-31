@@ -10,6 +10,8 @@ void	LoginScreen::show()
 	this->layout->addWidget(this->connectButton, 2, 0, 2, 0);
 	this->layout->addWidget(this->signInButton, 4, 0, 2, 0);
 	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(logIn()));
+	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(logIn()));
+	QObject::connect(this->pwdField, SIGNAL(returnPressed()), this, SLOT(logIn()));
 }
 
 void	LoginScreen::initButton()
