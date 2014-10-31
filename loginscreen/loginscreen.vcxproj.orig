@@ -119,8 +119,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h" />
-    <ClInclude Include="Hash.h" />
+<<<<<<< HEAD
     <ClInclude Include="MainMenu.h" />
+=======
+    <ClInclude Include="Hash.h" />
+>>>>>>> caff40481cb4900c0d8d0ddbe7309dbc2f595e7a
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="loginscreen.qrc">
