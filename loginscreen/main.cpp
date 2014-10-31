@@ -1,6 +1,7 @@
 #include "loginscreen.h"
 #include "MainMenu.h"
 #include "Hash.h"
+#include <iostream>
 
 
 int main(int argc, char *argv[])
@@ -8,6 +9,7 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 	LoginScreen	logScreen;
 	MainMenu	mainMenu;
+	Hash		toto;
 	int			result;
 
 	result = toto.hashing("");
