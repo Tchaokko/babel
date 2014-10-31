@@ -21,7 +21,7 @@ private:
 	QString		log;
 	QString		pass;
 	QGridLayout	*layout;
-	QWidget		*mainWidget;
+	QWidget		*window;
 	QLineEdit	*logField;
 	QLineEdit	*pwdField;
 	QLabel		*logLabel;

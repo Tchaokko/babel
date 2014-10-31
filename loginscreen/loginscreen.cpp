@@ -24,14 +24,14 @@ void	LoginScreen::signIn()
 
 void	LoginScreen::logIn()
 {
-	this->mainWidget->close();
-	this->mainWidget = new QWidget(NULL);
-	QVBoxLayout		*lay = new QVBoxLayout(this->mainWidget);
+	this->window->close();
+	this->window = new QWidget(NULL);
+	QVBoxLayout		*lay = new QVBoxLayout(this->window);
 	QLabel			*PraticalJoke = new QLabel("Celui qui lit ca est un con");
 
 	lay->addWidget(PraticalJoke);
-	this->mainWidget->setLayout(lay);
-	this->mainWidget->show();
+	this->window->setLayout(lay);
+	this->window->show();
 
 }
 
@@ -55,13 +55,13 @@ void	LoginScreen::initFields()
 
 LoginScreen::LoginScreen()
 {
-	this->mainWidget = new QWidget(NULL);
+	this->window = new QWidget(NULL);
 	this->layout = new QGridLayout();
 	this->initLabels();
 	this->initFields();
 	this->initButton();
-	this->mainWidget->setLayout(this->layout);
-	this->mainWidget->show();
+	this->window->setLayout(this->layout);
+	this->window->show();
 
 }
 
@@ -74,5 +74,5 @@ LoginScreen::~LoginScreen()
 	delete this->connectButton;
 	delete this->signInButton;
 	delete this->layout;
-	delete this->mainWidget;
+	delete this->window;
 }
