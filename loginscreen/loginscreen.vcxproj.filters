@@ -50,7 +50,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_loginscreen.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,7 +68,6 @@
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
