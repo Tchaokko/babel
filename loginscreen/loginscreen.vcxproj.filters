@@ -22,7 +22,13 @@
     <ClCompile Include="GeneratedFiles\qrc_loginscreen.cpp">
       <Filter>Garbage</Filter>
     </ClCompile>
-    <ClCompile Include="ListContact.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_MainMenu.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MainMenu.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="APropos.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,11 +36,11 @@
     <ClInclude Include="Hash.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
       <Filter>Garbage</Filter>
+    </ClInclude>
+    <ClInclude Include="APropos.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ListContact.h">
       <Filter>Header Files</Filter>
@@ -50,6 +56,9 @@
     <CustomBuild Include="loginscreen.ui">
       <Filter>Garbage</Filter>
     </CustomBuild>
+    <CustomBuild Include="MainMenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
@@ -62,6 +71,21 @@
     </Filter>
     <Filter Include="Garbage">
       <UniqueIdentifier>{7101b87d-c5c5-4073-a3a0-ae638bb3c7cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{48748d77-4760-4020-9bf6-75b9cdbcd189}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{11c212f2-a979-498c-9a65-f9abebb93c32}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>
 </Project>
