@@ -23,6 +23,7 @@ ContactList::ContactList(QVBoxLayout *layout)
 	layout->addWidget(this->view);
 
 	this->addWindow = new QWidget(NULL);
+	this->addWindow->setWindowTitle("Add contact");
 	this->addLayout = new QGridLayout;
 	this->addLabel = new QLabel("Login of the target :");
 	this->addField = new QLineEdit;

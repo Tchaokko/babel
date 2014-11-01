@@ -30,6 +30,7 @@ void	MainMenu::initMenuBar()
 MainMenu::MainMenu()
 {
 	this->window = new QMainWindow(NULL);
+	this->window->setWindowTitle("Comfirole");
 	this->mainWidget = new QWidget(this->window);
 	this->contactLayout = new QVBoxLayout;
 	this->info = new APropos;
