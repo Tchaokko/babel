@@ -11,11 +11,8 @@ int main(int argc, char *argv[])
 	LoginScreen	logScreen;
 	MainMenu	mainMenu;
 	Hash		toto;
-	QMainWindow	*window;
 
 	logScreen.show();
-	window = mainMenu.getWindow();
-	ListContact test(window);
 	mainMenu.show();
 	return a.exec();
 }

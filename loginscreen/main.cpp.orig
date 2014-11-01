@@ -1,25 +1,25 @@
 #include "loginscreen.h"
-<<<<<<< HEAD
 #include "MainMenu.h"
-=======
 #include "Hash.h"
-#include "iostream"
->>>>>>> caff40481cb4900c0d8d0ddbe7309dbc2f595e7a
+#include "ListContact.h"
+#include <iostream>
+
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 	LoginScreen	logScreen;
-<<<<<<< HEAD
 	MainMenu	mainMenu;
-=======
 	Hash		toto;
+<<<<<<< HEAD
+=======
+	QMainWindow	*window;
 	int			result;
->>>>>>> caff40481cb4900c0d8d0ddbe7309dbc2f595e7a
+>>>>>>> 4cd3531fc2160f11ac7a49d1a41f5e7c02486fea
 
-	result = toto.hashing("");
-	std::cout << "Test  " << result << std::endl;
 	logScreen.show();
+	window = mainMenu.getWindow();
+	ListContact test(window);
 	mainMenu.show();
 	return a.exec();
 }
