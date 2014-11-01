@@ -51,6 +51,9 @@
     <ClInclude Include="APropos.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ListContact.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="loginscreen.h">
