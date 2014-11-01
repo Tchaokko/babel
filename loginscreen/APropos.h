@@ -1,4 +1,5 @@
-#pragma once
+#ifndef APROPOS_H_
+# define APROPOS_H_
 # include <QtWidgets\QApplication>
 # include <QtWidgets\QMainWindow>
 # include <qmenubar.h>
@@ -21,3 +22,4 @@ private:
 	QLabel		*who;
 };
 
+#endif /* APROPOS_H_*/

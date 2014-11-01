@@ -11,7 +11,6 @@ void	MainMenu::show()
 
 void	MainMenu::initMenuBar()
 {
-	this->info = new APropos;
 	this->menu = this->window->menuBar()->addMenu("Contact");
 	this->add = new QAction("&Add", this->window);
 	this->del = new QAction("&Delete", this->window);
@@ -26,7 +25,15 @@ void	MainMenu::initMenuBar()
 MainMenu::MainMenu()
 {
 	this->window = new QMainWindow(NULL);
+	this->mainWidget = new QWidget(this->window);
+	this->contactLayout = new QVBoxLayout;
+	this->info = new APropos;
+	this->list = new ContactList(this->contactLayout);
+	this->mainWidget->setLayout(this->contactLayout);
+	this->window->setCentralWidget(this->mainWidget);
 	this->initMenuBar();
+
+	connect(this->add, SIGNAL(triggered()), this->list, SLOT(addWindowFunc()));
 }
 
 MainMenu::~MainMenu()
