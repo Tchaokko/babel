@@ -5,10 +5,12 @@
 # include <QtWidgets\qboxlayout.h>
 # include <QtCore\qstringlistmodel.h>
 # include <QtWidgets\qlistview.h>
+# include <QtWidgets\qlistwidget.h>
 # include <QtWidgets\qpushbutton.h>
 # include <QtWidgets\qlabel.h>
 # include <QtCore\qstring.h>
 # include <QtWidgets\qlineedit.h>
+# include <QModelIndex>
 
 
 class ContactList : public QObject
@@ -18,11 +20,8 @@ public:
 	ContactList(QVBoxLayout *);
 	~ContactList();
 private:
-	QStringList			data;
-	QStringListModel	model;
-	QListView			view;
+	QListWidget			wlist;
 	QVBoxLayout			*layout;
-	QString				name;
 private:
 	QWidget				addWindow;
 	QGridLayout			addLayout;
@@ -31,6 +30,7 @@ private:
 	QPushButton			addButton;
 
 private slots:
+	void	test(QListWidgetItem *);
 	void	addWindowFunc();
 	void	addElem();
 };

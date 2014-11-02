@@ -1,4 +1,10 @@
 #include "ContactList.h"
+#include <iostream>
+
+void	ContactList::test(QListWidgetItem *PereNoel)
+{
+	std::cout << (PereNoel->text()).toStdString() << std::endl;
+}
 
 void	ContactList::addWindowFunc()
 {
@@ -7,8 +13,7 @@ void	ContactList::addWindowFunc()
 
 void	ContactList::addElem()
 {
-	this->data << this->addField.text();
-	this->model.setStringList(this->data);
+	this->wlist.addItem(this->addField.text());
 	this->addField.clear();
 	this->addWindow.close();
 }
@@ -16,9 +21,8 @@ void	ContactList::addElem()
 ContactList::ContactList(QVBoxLayout *layout)
 {
 	this->layout = layout;
-	this->view.setModel(&this->model);
-	this->view.setEditTriggers(0);
-	layout->addWidget(&this->view);
+	layout->addWidget(&this->wlist);
+	connect(&this->wlist, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(test(QListWidgetItem *)));
 
 	this->addWindow.setWindowTitle("Add contact");
 	this->addLabel.setText("Login of the target :");
