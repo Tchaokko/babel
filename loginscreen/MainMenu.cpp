@@ -39,6 +39,7 @@ MainMenu::MainMenu()
 	this->initMenuBar();
 
 	connect(this->add, SIGNAL(triggered()), this->list, SLOT(addWindowFunc()));
+	connect(this->del, SIGNAL(triggered()), this->list, SLOT(delWindowFunc()));
 }
 
 MainMenu::~MainMenu()

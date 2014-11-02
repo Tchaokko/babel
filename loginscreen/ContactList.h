@@ -30,10 +30,20 @@ private:
 	QLineEdit			addField;
 	QPushButton			addButton;
 
+private:
+	QWidget				delWindow;
+	QGridLayout			delLayout;
+	QLabel				delLabel;
+	QLineEdit			delField;
+	QPushButton			delButton;
+
 private slots:
 	void	doubleClick(QListWidgetItem *);
 	void	addWindowFunc();
 	void	addElem();
+	void	delWindowFunc();
+	void	delElem();
+
 };
 
 #endif /*CONTACTLIST */
