@@ -11,7 +11,7 @@
 # include <QtCore\qstring.h>
 # include <QtWidgets\qlineedit.h>
 # include <QModelIndex>
-
+#include "CallWindow.h"
 
 class ContactList : public QObject
 {
@@ -22,6 +22,7 @@ public:
 private:
 	QListWidget			wlist;
 	QVBoxLayout			*layout;
+	CallWindow			call;
 private:
 	QWidget				addWindow;
 	QGridLayout			addLayout;
@@ -30,7 +31,7 @@ private:
 	QPushButton			addButton;
 
 private slots:
-	void	test(QListWidgetItem *);
+	void	doubleClick(QListWidgetItem *);
 	void	addWindowFunc();
 	void	addElem();
 };

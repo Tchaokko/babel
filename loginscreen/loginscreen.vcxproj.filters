@@ -40,11 +40,14 @@
     <ClCompile Include="GeneratedFiles\Release\moc_ContactList.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="ListContact.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
     <ClCompile Include="CallWindow.cpp">
       <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_CallWindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_CallWindow.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -55,9 +58,6 @@
       <Filter>Garbage</Filter>
     </ClInclude>
     <ClInclude Include="APropos.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CallWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -75,6 +75,9 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="ContactList.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CallWindow.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>

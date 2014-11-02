@@ -8,16 +8,25 @@
 # include <QtCore\qstring.h>
 # include <QtWidgets\qpushbutton.h>
 
-class CallWindow
+class CallWindow : QObject
 {
+
+	Q_OBJECT
 public:
 	CallWindow();
 	~CallWindow();
+	void		nameLabel(const QString &);
+	void		show();
 
 private:
 	QPushButton *callButton;
 	QWidget		*window;
 	QPushButton *denyButton;
 	QGridLayout *layout;
+	QLabel		*label;
+
+public slots:
+	void	call();
+	void	deny();
 };
 

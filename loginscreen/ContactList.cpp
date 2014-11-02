@@ -1,9 +1,13 @@
 #include "ContactList.h"
-#include <iostream>
+#include "CallWindow.h"
 
-void	ContactList::test(QListWidgetItem *PereNoel)
+void	ContactList::doubleClick(QListWidgetItem *item)
 {
-	std::cout << (PereNoel->text()).toStdString() << std::endl;
+	QString		label;
+
+	label = item->text();
+	this->call.nameLabel(label);
+	this->call.show();
 }
 
 void	ContactList::addWindowFunc()
@@ -20,9 +24,10 @@ void	ContactList::addElem()
 
 ContactList::ContactList(QVBoxLayout *layout)
 {
+
 	this->layout = layout;
 	layout->addWidget(&this->wlist);
-	connect(&this->wlist, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(test(QListWidgetItem *)));
+	connect(&this->wlist, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(doubleClick(QListWidgetItem *)));
 
 	this->addWindow.setWindowTitle("Add contact");
 	this->addLabel.setText("Login of the target :");
