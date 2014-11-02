@@ -8,6 +8,8 @@
 # include <QtWidgets\qlabel.h>
 # include <QtCore\qstring.h>
 # include <QtWidgets\qpushbutton.h>
+# include "MainMenu.h"
+# include "Hash.h"
 
 class LoginScreen : QObject
 {
@@ -18,6 +20,7 @@ public:
 	void	show();
 
 private:
+	MainMenu	mainMenu;
 	QString		log;
 	QString		pass;
 	QGridLayout	*layout;

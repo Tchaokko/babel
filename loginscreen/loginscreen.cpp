@@ -27,14 +27,7 @@ void	LoginScreen::signIn()
 void	LoginScreen::logIn()
 {
 	this->window->close();
-	this->window = new QWidget(NULL);
-	QVBoxLayout		*lay = new QVBoxLayout(this->window);
-	QLabel			*PraticalJoke = new QLabel("Celui qui lit ca est un con");
-
-	lay->addWidget(PraticalJoke);
-	this->window->setLayout(lay);
-	this->window->show();
-
+	this->mainMenu.show();
 }
 
 void	LoginScreen::getInfo()
