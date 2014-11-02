@@ -40,6 +40,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_ContactList.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="ListContact.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hash.h">
@@ -49,9 +52,6 @@
       <Filter>Garbage</Filter>
     </ClInclude>
     <ClInclude Include="APropos.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ListContact.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
