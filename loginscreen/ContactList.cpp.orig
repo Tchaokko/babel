@@ -1,5 +1,7 @@
 #include "ContactList.h"
+<<<<<<< HEAD
 #include "CallWindow.h"
+
 void	ContactList::doubleClick(QListWidgetItem *item)
 {
 	QString		label;
@@ -8,6 +10,8 @@ void	ContactList::doubleClick(QListWidgetItem *item)
 	this->call.nameLabel(label);
 	this->call.show();
 }
+=======
+>>>>>>> 49fe3ae7ad1a76a06d1194b63bdb2f9044424d58
 
 void	ContactList::addWindowFunc()
 {
@@ -47,7 +51,10 @@ ContactList::ContactList(QVBoxLayout *layout)
 
 	this->layout = layout;
 	layout->addWidget(&this->wlist);
+<<<<<<< HEAD
 	connect(&this->wlist, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(doubleClick(QListWidgetItem *)));
+=======
+>>>>>>> 49fe3ae7ad1a76a06d1194b63bdb2f9044424d58
 
 	this->addWindow.setWindowTitle("Add contact");
 	this->addLabel.setText("Login of the target :");

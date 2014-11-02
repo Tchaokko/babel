@@ -1,0 +1,52 @@
+#ifndef CONTACTLIST_H_
+# define CONTACTLIST_H_
+# include <QtWidgets\qapplication.h>
+# include <QtWidgets\qmainwindow.h>
+# include <QtWidgets\qboxlayout.h>
+# include <QtCore\qstringlistmodel.h>
+# include <QtWidgets\qlistview.h>
+# include <QtWidgets\qlistwidget.h>
+# include <QtWidgets\qpushbutton.h>
+# include <QtWidgets\qlabel.h>
+# include <QtCore\qstring.h>
+# include <QtWidgets\qlineedit.h>
+# include <QModelIndex>
+#include "CallWindow.h"
+
+class ContactList : public QObject
+{
+	Q_OBJECT
+public:
+	ContactList(QVBoxLayout *);
+	~ContactList();
+private:
+	QListWidget			wlist;
+	QVBoxLayout			*layout;
+	CallWindow			call;
+private:
+	QWidget				addWindow;
+	QGridLayout			addLayout;
+	QLabel				addLabel;
+	QLineEdit			addField;
+	QPushButton			addButton;
+
+private:
+	QWidget				delWindow;
+	QGridLayout			delLayout;
+	QLabel				delLabel;
+	QLineEdit			delField;
+	QPushButton			delButton;
+
+private slots:
+<<<<<<< HEAD
+	void	doubleClick(QListWidgetItem *);
+=======
+>>>>>>> 49fe3ae7ad1a76a06d1194b63bdb2f9044424d58
+	void	addWindowFunc();
+	void	addElem();
+	void	delWindowFunc();
+	void	delElem();
+
+};
+
+#endif /*CONTACTLIST */
