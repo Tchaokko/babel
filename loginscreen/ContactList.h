@@ -19,16 +19,16 @@ public:
 	~ContactList();
 private:
 	QStringList			data;
-	QStringListModel	*model;
-	QListView			*view;
+	QStringListModel	model;
+	QListView			view;
 	QVBoxLayout			*layout;
 	QString				name;
 private:
-	QWidget				*addWindow;
-	QGridLayout			*addLayout;
-	QLabel				*addLabel;
-	QLineEdit			*addField;
-	QPushButton			*addButton;
+	QWidget				addWindow;
+	QGridLayout			addLayout;
+	QLabel				addLabel;
+	QLineEdit			addField;
+	QPushButton			addButton;
 
 private slots:
 	void	addWindowFunc();

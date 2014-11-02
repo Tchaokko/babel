@@ -23,7 +23,7 @@ private:
 	QAction		*aPropos;
 	APropos		*info;
 	ContactList	*list;
-	QVBoxLayout	*contactLayout;
+	QVBoxLayout	contactLayout;
 
 private slots:
 	void	showAPropos();
