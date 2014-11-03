@@ -10,6 +10,8 @@
 # include <QtWidgets\qpushbutton.h>
 # include "MainMenu.h"
 # include "Hash.h"
+#include "ParserXML.hh"
+
 
 class LoginScreen : QObject
 {

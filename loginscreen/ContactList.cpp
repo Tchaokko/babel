@@ -1,5 +1,6 @@
 #include "ContactList.h"
 #include "CallWindow.h"
+
 void	ContactList::doubleClick(QListWidgetItem *item)
 {
 	QString		label;
@@ -17,6 +18,7 @@ void	ContactList::addWindowFunc()
 void	ContactList::addElem()
 {
 	this->wlist.addItem(this->addField.text());
+	this->parser.addFriend((this->addField.text()).toStdString(), this->userName.toStdString());
 	this->addField.clear();
 	this->addWindow.close();
 }
@@ -37,14 +39,25 @@ void	ContactList::delElem()
 		row = this->wlist.row(listItem.back());
 		item = this->wlist.takeItem(row);
 		this->wlist.removeItemWidget(item);
+		this->parser.removeFriend((this->delField.text()).toStdString(), this->userName.toStdString());
 	}
 	this->delField.clear();
 	this->delWindow.close();
 }
 
-ContactList::ContactList(QVBoxLayout *layout)
+ContactList::ContactList(QVBoxLayout *layout, QString &userName) : userName(userName)
 {
+	std::list<std::string>				friendList;
+	std::list<std::string>::iterator	it;
+	QString								str;
 
+	friendList = this->parser.listOfFriend(this->userName.toStdString());
+	for (it = friendList.begin(); it != friendList.end(); it++)
+	{
+		str.append(str);
+		this->wlist.addItem(str);
+		str.clear();
+	}
 	this->layout = layout;
 	layout->addWidget(&this->wlist);
 	connect(&this->wlist, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(doubleClick(QListWidgetItem *)));

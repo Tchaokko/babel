@@ -11,10 +11,12 @@ public:
 	~MainMenu();
 	void	show();
 	QMainWindow *getWindow();
+	void		setUserName(QString const &);
 
 private:
 	void	initMenuBar();
 private:
+	QString		userName;
 	QMainWindow	*window;
 	QWidget		*mainWidget;
 	QMenu		*menu;
