@@ -113,6 +113,7 @@
     <ClCompile Include="loginscreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="ParserXML.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="loginscreen.h">
@@ -140,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="APropos.h" />
+    <ClInclude Include="ParserXML.hh" />
     <CustomBuild Include="ContactList.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ContactList.h...</Message>

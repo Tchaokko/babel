@@ -1,5 +1,4 @@
 #include "loginscreen.h"
-#include "iostream"
 
 void	LoginScreen::show()
 {
@@ -26,7 +25,12 @@ void	LoginScreen::signIn()
 
 void	LoginScreen::logIn()
 {
+	ParserXML	parser;
+
 	this->window->close();
+	this->getInfo();
+	this->mainMenu.setUserName(this->log);
+	parser.createUser(this->log.toStdString());
 	this->mainMenu.show();
 }
 

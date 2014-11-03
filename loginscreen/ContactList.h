@@ -11,15 +11,18 @@
 # include <QtCore\qstring.h>
 # include <QtWidgets\qlineedit.h>
 # include <QModelIndex>
-#include "CallWindow.h"
+# include "CallWindow.h"
+# include "ParserXML.hh"
 
 class ContactList : public QObject
 {
 	Q_OBJECT
 public:
-	ContactList(QVBoxLayout *);
+	ContactList(QVBoxLayout *, QString &);
 	~ContactList();
 private:
+	ParserXML			parser;
+	QString				&userName;
 	QListWidget			wlist;
 	QVBoxLayout			*layout;
 	CallWindow			call;

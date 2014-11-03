@@ -49,6 +49,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_CallWindow.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="ParserXML.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hash.h">
@@ -58,6 +61,9 @@
       <Filter>Garbage</Filter>
     </ClInclude>
     <ClInclude Include="APropos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParserXML.hh">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
