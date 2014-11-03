@@ -44,20 +44,25 @@ void	ContactList::delElem()
 	this->delField.clear();
 	this->delWindow.close();
 }
-
-ContactList::ContactList(QVBoxLayout *layout, QString &userName) : userName(userName)
+void		ContactList::initFriendList(QString &userName)
 {
 	std::list<std::string>				friendList;
 	std::list<std::string>::iterator	it;
 	QString								str;
 
+	this->userName = userName;
 	friendList = this->parser.listOfFriend(this->userName.toStdString());
 	for (it = friendList.begin(); it != friendList.end(); it++)
 	{
-		str.append(str);
+		str = (*it).c_str();
+		std::cout << str.toStdString() << std::endl;
 		this->wlist.addItem(str);
 		str.clear();
 	}
+}
+
+ContactList::ContactList(QVBoxLayout *layout)
+{
 	this->layout = layout;
 	layout->addWidget(&this->wlist);
 	connect(&this->wlist, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(doubleClick(QListWidgetItem *)));

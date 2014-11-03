@@ -18,11 +18,12 @@ class ContactList : public QObject
 {
 	Q_OBJECT
 public:
-	ContactList(QVBoxLayout *, QString &);
+	ContactList(QVBoxLayout *);
 	~ContactList();
+	void		initFriendList(QString &);
 private:
 	ParserXML			parser;
-	QString				&userName;
+	QString				userName;
 	QListWidget			wlist;
 	QVBoxLayout			*layout;
 	CallWindow			call;

@@ -19,6 +19,11 @@ QMainWindow *MainMenu::getWindow()
 	return this->window;
 }
 
+void	MainMenu::initContactList()
+{
+	this->list->initFriendList(this->userName);
+}
+
 void	MainMenu::initMenuBar()
 {
 	this->menu = this->window->menuBar()->addMenu("Contact");
@@ -38,11 +43,11 @@ MainMenu::MainMenu()
 	this->window->setWindowTitle("Comfirole");
 	this->mainWidget = new QWidget(this->window);
 	this->info = new APropos;
-	this->list = new ContactList(&this->contactLayout, this->userName);
+
+	this->list = new ContactList(&this->contactLayout);
 	this->mainWidget->setLayout(&this->contactLayout);
 	this->window->setCentralWidget(this->mainWidget);
 	this->initMenuBar();
-
 	connect(this->add, SIGNAL(triggered()), this->list, SLOT(addWindowFunc()));
 	connect(this->del, SIGNAL(triggered()), this->list, SLOT(delWindowFunc()));
 }

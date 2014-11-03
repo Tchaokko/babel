@@ -30,6 +30,7 @@ void	LoginScreen::logIn()
 	this->window->close();
 	this->getInfo();
 	this->mainMenu.setUserName(this->log);
+	this->mainMenu.initContactList();
 	parser.createUser(this->log.toStdString());
 	this->mainMenu.show();
 }
@@ -39,6 +40,7 @@ void	LoginScreen::getInfo()
 	this->pass = this->pwdField->text();
 	this->log = this->logField->text();
 }
+
 void	LoginScreen::initLabels()
 {
 	this->logLabel = new QLabel("Login: ");

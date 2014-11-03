@@ -12,6 +12,7 @@ public:
 	void	show();
 	QMainWindow *getWindow();
 	void		setUserName(QString const &);
+	void		initContactList();
 
 private:
 	void	initMenuBar();
