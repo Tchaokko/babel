@@ -48,8 +48,8 @@ MainMenu::MainMenu()
 	this->mainWidget->setLayout(&this->contactLayout);
 	this->window->setCentralWidget(this->mainWidget);
 	this->initMenuBar();
-	connect(this->add, SIGNAL(triggered()), this->list, SLOT(addWindowFunc()));
-	connect(this->del, SIGNAL(triggered()), this->list, SLOT(delWindowFunc()));
+	connect(this->add, SIGNAL(triggered()), this->list, SLOT(sendAddRequestToServer()));
+	connect(this->del, SIGNAL(triggered()), this->list, SLOT(sendDelRequestToServer()));
 }
 
 MainMenu::~MainMenu()

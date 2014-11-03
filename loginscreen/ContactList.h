@@ -22,6 +22,10 @@ public:
 	~ContactList();
 	void		initFriendList(QString &);
 private:
+	void	addElem();
+	void	delElem();
+
+private:
 	ParserXML			parser;
 	QString				userName;
 	QListWidget			wlist;
@@ -44,10 +48,9 @@ private:
 private slots:
 	void	doubleClick(QListWidgetItem *);
 	void	addWindowFunc();
-	void	addElem();
 	void	delWindowFunc();
-	void	delElem();
-
+	void	sendAddRequestToServer();
+	void	sendDelRequestToServer();
 };
 
 #endif /*CONTACTLIST */

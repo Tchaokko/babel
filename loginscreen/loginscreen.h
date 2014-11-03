@@ -39,10 +39,11 @@ private:
 	void	initFields();
 	void	initButton();
 	void	getInfo();
+	void	logIn();
 
 public slots:
-	void	logIn();
 	void	signIn();
+	void	SendConnexionRequestToServer();
 };
 
 #endif // LOGINSCREEN_H

@@ -10,6 +10,16 @@ void	ContactList::doubleClick(QListWidgetItem *item)
 	this->call.show();
 }
 
+void	ContactList::sendAddRequestToServer()
+{
+
+}
+
+void	ContactList::sendDelRequestToServer()
+{
+
+}
+
 void	ContactList::addWindowFunc()
 {
 	this->addWindow.show();
@@ -86,7 +96,6 @@ ContactList::ContactList(QVBoxLayout *layout)
 	this->delWindow.setLayout(&this->delLayout);
 	connect(&this->delButton, SIGNAL(clicked()), this, SLOT(delElem()));
 	connect(&this->delField, SIGNAL(returnPressed()), this, SLOT(delElem()));
-
 }
 
 

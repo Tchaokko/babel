@@ -8,10 +8,10 @@ void	LoginScreen::show()
 	this->layout->addWidget(this->pwdField, 1, 1);
 	this->layout->addWidget(this->connectButton, 2, 0, 2, 0);
 	this->layout->addWidget(this->signInButton, 4, 0, 2, 0);
-	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(logIn()));
+	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(SendConnexionRequestToServer()));
 	QObject::connect(this->signInButton, SIGNAL(clicked()), this, SLOT(signIn()));
-	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(logIn()));
-	QObject::connect(this->pwdField, SIGNAL(returnPressed()), this, SLOT(logIn()));
+	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(SendConnexionRequestToServer()));
+	QObject::connect(this->pwdField, SIGNAL(returnPressed()), this, SLOT(SendConnexionRequestToServer()));
 }
 
 void	LoginScreen::initButton()
@@ -22,6 +22,11 @@ void	LoginScreen::initButton()
 
 void	LoginScreen::signIn()
 {
+}
+
+void	LoginScreen::SendConnexionRequestToServer()
+{
+
 }
 
 void	LoginScreen::logIn()
