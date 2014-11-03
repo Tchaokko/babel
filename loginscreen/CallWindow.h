@@ -17,16 +17,23 @@ public:
 	~CallWindow();
 	void		nameLabel(const QString &);
 	void		show();
+	void		callIncoming(const QString &);
 
 private:
+
+	QLabel		*incoming;
 	QPushButton *callButton;
-	QWidget		*window;
+	QPushButton *acceptButton;
+	QWidget		*windowCall;
+	QWidget		*windowIncoming;
 	QPushButton *denyButton;
-	QGridLayout *layout;
+	QGridLayout *layoutCall;
+	QGridLayout *layoutIncoming;
 	QLabel		*label;
 
 public slots:
 	void	call();
 	void	deny();
+	void	accept();
 };
 
