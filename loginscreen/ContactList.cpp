@@ -59,7 +59,10 @@ ContactList::ContactList(QVBoxLayout *layout, QString &userName) : userName(user
 		str.clear();
 	}
 	this->layout = layout;
+	str = "test";
 	layout->addWidget(&this->wlist);
+	this->call.callIncoming(str);
+	this->call.show();
 	connect(&this->wlist, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(doubleClick(QListWidgetItem *)));
 
 	this->addWindow.setWindowTitle("Add contact");
