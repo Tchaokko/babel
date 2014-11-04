@@ -2,12 +2,12 @@
 # define LOGINSCREEN_H
 
 # include <QtWidgets/QApplication>
-# include <QtWidgets\QMainWindow>
-# include <QtWidgets\qlineedit.h>
-# include <QtWidgets\qboxlayout.h>
-# include <QtWidgets\qlabel.h>
-# include <QtCore\qstring.h>
-# include <QtWidgets\qpushbutton.h>
+# include <QtWidgets/QMainWindow>
+# include <QtWidgets/qlineedit.h>
+# include <QtWidgets/qboxlayout.h>
+# include <QtWidgets/qlabel.h>
+# include <QtCore/qstring.h>
+# include <QtWidgets/qpushbutton.h>
 # include "MainMenu.h"
 # include "Hash.h"
 #include "ParserXML.hh"

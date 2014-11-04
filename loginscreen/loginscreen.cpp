@@ -15,6 +15,8 @@ void	LoginScreen::show()
 	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(logIn()));
 	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(logIn()));
 	QObject::connect(this->pwdField, SIGNAL(returnPressed()), this, SLOT(logIn()));
+
+	this->connectButton->setStyleSheet("background-color: rgba(255,0,0,128)");
 }
 
 void	LoginScreen::initButton()
