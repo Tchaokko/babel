@@ -1,6 +1,6 @@
 #include "ParserXML.hh"
 
-ParserXML::ParserXML()
+ParserXML::ParserXML() : FILE_DONT_EXIST(-1)
 {
 	std::cout << "Parser created" << std::endl;
 }

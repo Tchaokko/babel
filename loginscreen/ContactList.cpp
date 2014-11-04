@@ -54,6 +54,7 @@ void	ContactList::delElem()
 	this->delField.clear();
 	this->delWindow.close();
 }
+
 void		ContactList::initFriendList(QString &userName)
 {
 	std::list<std::string>				friendList;
@@ -84,8 +85,10 @@ ContactList::ContactList(QVBoxLayout *layout)
 	this->addLayout.addWidget(&this->addField, 0, 1);
 	this->addLayout.addWidget(&this->addButton, 2, 0, 2, 0);
 	this->addWindow.setLayout(&this->addLayout);
-	connect(&this->addButton, SIGNAL(clicked()), this, SLOT(addElem()));
-	connect(&this->addField, SIGNAL(returnPressed()), this, SLOT(addElem()));
+	//	connect(this->add, SIGNAL(triggered()), this->list, SLOT(addElem()));
+	//	connect(this->del, SIGNAL(triggered()), this->list, SLOT(delElem()));
+	connect(&this->addButton, SIGNAL(clicked()), this, SLOT(sendAddRequestToServer()));
+	connect(&this->addField, SIGNAL(returnPressed()), this, SLOT(sendAddRequestToServer()));
 
 	this->delWindow.setWindowTitle("Delete contact");
 	this->delLabel.setText("Login of the target :");

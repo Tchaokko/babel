@@ -11,7 +11,6 @@
 # include	<sys/stat.h>
 # include	<stdint.h>
 
-# define	FILE_DONT_EXIST	(-1)
 # define	FILE_EXTENSION	(".babel")
 
 class ParserXML
@@ -25,6 +24,8 @@ public:
 	void	addFriend(std::string const &, std::string const &);
 	void	removeFriend(std::string const &, std::string const &);
 	std::list<std::string>	listOfFriend(std::string const &);
+private:
+	const int	FILE_DONT_EXIST;
 };
 
 #endif		// !__PARSERXML_HH__

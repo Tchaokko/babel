@@ -22,8 +22,8 @@ public:
 	~ContactList();
 	void		initFriendList(QString &);
 private:
-	void	addElem();
-	void	delElem();
+//	void	addElem();
+//	void	delElem();
 
 private:
 	ParserXML			parser;
@@ -51,6 +51,9 @@ private slots:
 	void	delWindowFunc();
 	void	sendAddRequestToServer();
 	void	sendDelRequestToServer();
+	void	addElem();
+	void	delElem();
+
 };
 
 #endif /*CONTACTLIST */
