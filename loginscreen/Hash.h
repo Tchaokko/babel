@@ -1,4 +1,6 @@
-#pragma once
+#ifndef HASH_H_
+# define HASH_H_
+
 class Hash
 {
 public:
@@ -14,3 +16,4 @@ private:
 	int	FNV_prime;
 };
 
+#endif /* HASH_H_*/

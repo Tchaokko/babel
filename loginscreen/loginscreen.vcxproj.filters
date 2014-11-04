@@ -52,6 +52,9 @@
     <ClCompile Include="ParserXML.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="HandleProtocol.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hash.h">
@@ -67,6 +70,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Protocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleProtocol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -109,6 +109,7 @@
     <ClCompile Include="GeneratedFiles\Release\moc_MainMenu.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="HandleProtocol.cpp" />
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="loginscreen.cpp" />
     <ClCompile Include="main.cpp" />
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="APropos.h" />
+    <ClInclude Include="HandleProtocol.h" />
     <ClInclude Include="ParserXML.hh" />
     <ClInclude Include="Protocol.h" />
     <CustomBuild Include="ContactList.h">
