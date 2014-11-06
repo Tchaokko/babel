@@ -55,6 +55,10 @@
     <ClCompile Include="GeneratedFiles\Release\moc_HandleSocket.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Babel.cpp">
+    <ClCompile Include="HandleSocket.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
     <ClCompile Include="HandleSocket.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -79,6 +83,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IGraphique.h">
+    <ClInclude Include="Babel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceProtocol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,21 +3,18 @@
 bool	HandleProtocol::processRequest(Protocol::RequestData const &data)
 {	
 	//if (data.Type == Protocol::CONNECT)
-	return true;
+		return true;
 	return false;
+	return true;
 }
 
-bool	HandleProtocol::processData(Protocol::CallData const &data)
+bool	HandleProtocol::processCallData(Protocol::CallData const &data)
 {
 	return true;
 }
 
-bool	HandleProtocol::readRequest()
-{
-	return true;
-}
 
-bool	HandleProtocol::sendData(Protocol::CallData const &data)
+bool	HandleProtocol::sendCallData(Protocol::CallData const &data)
 {
 	return true;
 }

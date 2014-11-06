@@ -1,27 +1,24 @@
 #include "HandleProtocol.h"
 
 bool	HandleProtocol::processRequest(Protocol::RequestData const &data)
-<<<<<<< HEAD
-{
-	if (data.Type == Protocol::CONNECT)
-			;
-=======
 {	
->>>>>>> 597800e005a942e9b3ef8eaeba6e3b1b64b95d0f
+<<<<<<< HEAD
+	//if (data.Type == Protocol::CONNECT)
+=======
+	if (data.Type == Protocol::CONNECT)
+		return true;
+>>>>>>> 45452ed4b6d53d485c2b9712a23f424228a3db87
 	return true;
+	return false;
 }
 
-bool	HandleProtocol::processData(Protocol::CallData const &data)
+bool	HandleProtocol::processCallData(Protocol::CallData const &data)
 {
 	return true;
 }
 
-bool	HandleProtocol::readRequest()
-{
-	return true;
-}
 
-bool	HandleProtocol::sendData(Protocol::CallData const &data)
+bool	HandleProtocol::sendCallData(Protocol::CallData const &data)
 {
 	return true;
 }

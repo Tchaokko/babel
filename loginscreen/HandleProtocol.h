@@ -1,19 +1,19 @@
 #ifndef HANDLEPROTOCOL
 # define HANDLEPROTOCOL
 # include "Protocol.h"
+#include "InterfaceProtocol.h"
 
-class HandleProtocol
+class HandleProtocol : public InterfaceProtocol
 {
 	Protocol::RequestData	_requestData;
 	Protocol::CallData		_data;
 public:
 	HandleProtocol();
-	~HandleProtocol();
-	bool	sendRequest(Protocol::RequestData const &data);
-	bool	sendData(Protocol::CallData const &data);
-	bool	readRequest();
-	bool	processRequest(Protocol::RequestData const &);
-	bool	processData(Protocol::CallData const &);
+	virtual ~HandleProtocol();
+	virtual bool	sendRequest(Protocol::RequestData const &data);
+	virtual bool	sendCallData(Protocol::CallData const &data);
+	virtual bool	processRequest(Protocol::RequestData const &);
+	virtual bool	processCallData(Protocol::CallData const &);
 };
 
 #endif /* HANDLEPROTOCOL */
