@@ -2,6 +2,7 @@
 
 bool	HandleProtocol::processRequest(Protocol::RequestData const &data)
 {	
+	if (data.Type == Protocol::CONNECT)
 	return true;
 }
 

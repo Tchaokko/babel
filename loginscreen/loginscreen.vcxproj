@@ -117,7 +117,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="HandleProtocol.cpp" />
-    <ClCompile Include="HandleSocket.cpp" />
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="loginscreen.cpp" />
     <ClCompile Include="main.cpp" />
@@ -152,6 +151,7 @@
     <ClInclude Include="APropos.h" />
     <ClInclude Include="Babel.h" />
     <ClInclude Include="HandleProtocol.h" />
+    <ClInclude Include="Protocol.h" />
     <CustomBuild Include="HandleSocket.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing HandleSocket.h...</Message>
@@ -164,7 +164,6 @@
     </CustomBuild>
     <ClInclude Include="InterfaceProtocol.h" />
     <ClInclude Include="ParserXML.hh" />
-    <ClInclude Include="Protocol.h" />
     <CustomBuild Include="ContactList.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing ContactList.h...</Message>
