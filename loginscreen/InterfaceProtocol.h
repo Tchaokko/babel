@@ -1,16 +1,14 @@
 #pragma once
+#include "Protocol.h"
 
 class InterfaceProtocol
 {
 
-public:
-
-	virtual ~InterfaceProtocol() = 0;
 protected:
 	
-	virtual void	sendRequest() = 0;
-	virtual void	sendCallData() = 0;
-	virtual void	processRequest() = 0;
-	virtual void	processCallData() = 0;
+	virtual bool	sendRequest(Protocol::RequestData const &) = 0;
+	virtual bool	sendCallData(Protocol::CallData const &) = 0;
+	virtual bool	processRequest(Protocol::RequestData const &) = 0;
+	virtual bool	processCallData(Protocol::CallData const &) = 0;
 };
 

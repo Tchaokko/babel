@@ -4,7 +4,7 @@
 #include <qlistwidget.h>
 #include <HandleSocket.h>
 #include <HandleProtocol.h>
-
+#include <InterfaceProtocol.h>
 class Babel : QObject 
 {
 public:

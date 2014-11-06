@@ -117,6 +117,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="HandleProtocol.cpp" />
+    <ClCompile Include="HandleSocket.cpp" />
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="loginscreen.cpp" />
     <ClCompile Include="main.cpp" />

@@ -23,7 +23,7 @@ void		HandleSocket::processData()
 			++count;
 		}
 	}
-	this->protocolHandler->processData(data);
+	this->protocolHandler->processCallData(data);
 }
 
 
@@ -52,7 +52,7 @@ void		HandleSocket::processInfo()
 
 void		HandleSocket::initSocket()
 {
-	this->hostAdress.setAddress(this->ip);
+	this->hostAdress.setAddress("");
 	this->udpSocket->bind(this->hostAdress, 2520);
 	this->tcpSocket->bind(this->hostAdress, 4045);
 }

@@ -64,6 +64,9 @@
     <ClCompile Include="Babel.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="HandleSocket.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Hash.h">
