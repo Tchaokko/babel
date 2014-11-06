@@ -6,7 +6,7 @@ class Hash
 public:
 	Hash();
 	~Hash();
-	int	hashing(char*);
+	int	hashing(const char*);
 
 private:
 	

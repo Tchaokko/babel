@@ -8,6 +8,9 @@
 # include <QtWidgets/qlabel.h>
 # include <QtCore/qstring.h>
 # include <QtWidgets/qpushbutton.h>
+#include "Protocol.h"
+#include "HandleProtocol.h"
+#include "HandleSocket.h"
 # include "MainMenu.h"
 # include "Hash.h"
 #include "ParserXML.hh"
@@ -23,6 +26,7 @@ public:
 
 private:
 	MainMenu	mainMenu;
+	Hash		_hash;
 	QString		log;
 	QString		pass;
 	QGridLayout	*layout;
