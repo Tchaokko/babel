@@ -1,7 +1,7 @@
 #include "Hash.h"
 
 
-int	Hash::hashing(char *string)
+int	Hash::hashing(const char *string)
 {
 	int		hashed;
 	int		count = 0;

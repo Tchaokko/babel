@@ -1,8 +1,7 @@
 #include "HandleProtocol.h"
 
 bool	HandleProtocol::processRequest(Protocol::RequestData const &data)
-{
-	
+{	
 	return true;
 }
 

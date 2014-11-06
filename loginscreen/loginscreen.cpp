@@ -29,7 +29,16 @@ void	LoginScreen::signIn()
 
 void	LoginScreen::SendConnexionRequestToServer()
 {
+	Protocol::RequestData	data;
+	uint32_t				Log;
+	uint32_t				Pass;
 
+	data.Type = Protocol::Type::CONNECT;
+	Log = this->_hash.hashing(this->logField->text().toStdString().c_str());
+	Pass = this->_hash.hashing(this->pwdField->text().toStdString().c_str());
+	data.Source = Log;
+	data.Pwd = Pass;
+	data.Spef = Protocol::Spefication::CONNECT_R;
 }
 
 void	LoginScreen::logIn()
