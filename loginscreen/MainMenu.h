@@ -1,22 +1,22 @@
 #ifndef MAINMENU_H_
 # define MAINMENU_H_
+# include "IGraphique.h"
 # include "APropos.h"
 # include "ContactList.h"
 
-class MainMenu : public QObject
+class MainMenu : public IGraphique
 {
-	Q_OBJECT
 public:
 	MainMenu();
-	~MainMenu();
-	void	show();
-	QMainWindow *getWindow();
-	void		setUserName(QString const &);
-	void		initContactList();
-
+	virtual ~MainMenu();
+	virtual void	show();
+	virtual	void	getInfo();
+	QMainWindow		*getWindow();
+	void			setUserName(QString const &);
+	void			initContactList();
 private:
-	void	initMenuBar();
-	void	setStyleSheet();
+	void			initMenuBar();
+	virtual void	setStyleSheet();
 private:
 	QString		userName;
 	QMainWindow	*window;
@@ -28,9 +28,6 @@ private:
 	APropos		*info;
 	ContactList	*list;
 	QVBoxLayout	contactLayout;
-
-private slots:
-	void	showAPropos();
 };
 
 #endif /* !MAINMENU_H_*/

@@ -66,9 +66,6 @@
     <ClInclude Include="APropos.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Babel.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="HandleProtocol.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -113,6 +110,9 @@
     <CustomBuild Include="loginscreen.ui">
       <Filter>garbage</Filter>
     </CustomBuild>
+    <CustomBuild Include="Babel.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">
@@ -123,6 +123,16 @@
     </Filter>
     <Filter Include="garbage">
       <UniqueIdentifier>{bbf34ff9-037c-4eb9-ae0a-abe59b47ea6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{db235782-83fd-49cf-9d23-4cb40600ba84}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,5 +1,10 @@
 #include "MainMenu.h"
 
+void	MainMenu::getInfo()
+{
+
+}
+
 void	MainMenu::setStyleSheet()
 {
 	this->mainWidget->setStyleSheet("background-color: #00CED1");
@@ -11,16 +16,12 @@ void	MainMenu::setUserName(QString const &userName)
 	this->userName = userName;
 }
 
-void	MainMenu::showAPropos()
-{
-	this->info->show();
-}
 void	MainMenu::show()
 {
 	this->window->show();
 }
 
-QMainWindow *MainMenu::getWindow()
+QMainWindow	*MainMenu::getWindow()
 {
 	return this->window;
 }
@@ -40,7 +41,6 @@ void	MainMenu::initMenuBar()
 	this->menu = this->window->menuBar()->addMenu("?");
 	this->aPropos = new QAction("A propos", this->window);
 	this->menu->addAction(this->aPropos);
-	connect(this->aPropos, SIGNAL(triggered()), this, SLOT(showAPropos()));
 }
 
 MainMenu::MainMenu()
@@ -55,10 +55,13 @@ MainMenu::MainMenu()
 	this->window->setCentralWidget(this->mainWidget);
 	this->initMenuBar();
 	this->setStyleSheet();
-	connect(this->add, SIGNAL(triggered()), this->list, SLOT(addWindowFunc()));
-	connect(this->del, SIGNAL(triggered()), this->list, SLOT(delWindowFunc()));
 }
 
 MainMenu::~MainMenu()
 {
+	delete this->add;
+	delete this->del;
+	delete this->aPropos;
+	delete this->info;
+	delete this->list;
 }

@@ -23,9 +23,9 @@ public:
 	LoginScreen();
 	virtual ~LoginScreen();
 	virtual void	show();
-
+	virtual void	getInfo();
 private:
-	//MainMenu	mainMenu;
+	MainMenu	mainMenu;
 	Hash		_hash;
 	QString		log;
 	QString		pass;
@@ -41,13 +41,7 @@ private:
 	QPushButton	*signInButton;
 
 private:
-	virtual void	getInfo();
 	virtual void	setStyleSheet();
-
-	//public slots:
-	//	void	signIn();
-	//	void	logIn();
-	//	void	SendConnexionRequestToServer();
 };
 
 
