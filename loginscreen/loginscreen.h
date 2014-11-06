@@ -17,38 +17,38 @@
 # include "ParserXML.hh"
 
 
-class LoginScreen : IGraphique
+class LoginScreen : public IGraphique
 {
-	//Q_OBJECT
 public:
 	LoginScreen();
 	virtual ~LoginScreen();
 	virtual void	show();
 
 private:
-	MainMenu	mainMenu;
+	//MainMenu	mainMenu;
 	Hash		_hash;
 	QString		log;
 	QString		pass;
 	QGridLayout	*layout;
 	QWidget		*window;
-	QLineEdit	logField;
-	QLineEdit	pwdField;
-	QLineEdit	ipField;
-	QLabel		logLabel;
-	QLabel		pwdLabel;
-	QLabel		ipLabel;
-	QPushButton	connectButton;
-	QPushButton	signInButton;
+	QLineEdit	*logField;
+	QLineEdit	*pwdField;
+	QLineEdit	*ipField;
+	QLabel		*logLabel;
+	QLabel		*pwdLabel;
+	QLabel		*ipLabel;
+	QPushButton	*connectButton;
+	QPushButton	*signInButton;
 
 private:
 	virtual void	getInfo();
 	virtual void	setStyleSheet();
 
-//public slots:
-//	void	signIn();
-//	void	logIn();
-//	void	SendConnexionRequestToServer();
+	//public slots:
+	//	void	signIn();
+	//	void	logIn();
+	//	void	SendConnexionRequestToServer();
 };
+
 
 #endif // LOGINSCREEN_H

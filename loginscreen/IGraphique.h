@@ -1,7 +1,8 @@
 #ifndef IGRAPHIQUE
 # define IGRAPHIQUE
+# include "Babel.h"
 
-class IGraphique
+class IGraphique : public Babel
 {
 public:
 	virtual void	show() = 0;
