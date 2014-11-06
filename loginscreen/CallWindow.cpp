@@ -1,5 +1,14 @@
 #include "CallWindow.h"
 
+void		CallWindow::setStyleSheet()
+{
+	this->windowCall->setStyleSheet("background-color: #00CED1");
+	this->windowIncoming->setStyleSheet("background-color: #00CED1");
+	this->acceptButton->setStyleSheet("background-color: #4eea58");
+	this->callButton->setStyleSheet("background-color: #4eea58");
+	this->denyButton->setStyleSheet("background-color: #ea6d4e");
+}
+
 void	CallWindow::nameLabel(const QString &name)
 {
 	this->layoutCall->addWidget(this->callButton, 1, 0);
@@ -12,6 +21,7 @@ void	CallWindow::nameLabel(const QString &name)
 
 void	CallWindow::show()
 {
+	this->windowIncoming->show();
 }
 
 void	CallWindow::call()
@@ -28,8 +38,7 @@ void	CallWindow::callIncoming(const QString &name)
 	this->layoutIncoming->addWidget(this->denyButton, 3, 0);
 	this->layoutIncoming->addWidget(this->label, 1, 0);
 	this->windowIncoming->setLayout(this->layoutIncoming);
-	this->windowIncoming->show();
-
+	this->show();
 }
 
 void	CallWindow::deny()
@@ -53,6 +62,7 @@ CallWindow::CallWindow()
 	this->acceptButton = new QPushButton("Accept");
 	this->label = new QLabel();
 	this->incoming = new QLabel("Incoming call from");
+	this->setStyleSheet();
 
 	QObject::connect(this->callButton, SIGNAL(clicked()), this, SLOT(call()));
 	QObject::connect(this->denyButton, SIGNAL(clicked()), this, SLOT(deny()));

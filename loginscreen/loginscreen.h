@@ -39,11 +39,12 @@ private:
 	void	initFields();
 	void	initButton();
 	void	getInfo();
-//	void	logIn();
+	void	setStyleSheet();
+	void	logIn();
 
 public slots:
 	void	signIn();
-	void	logIn();
+//	void	logIn();
 	void	SendConnexionRequestToServer();
 };
 

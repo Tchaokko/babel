@@ -15,6 +15,8 @@ public:
 	void	show();
 
 private:
+	void	setStyleSheet();
+private:
 	QWidget		*windowAPropos;
 	QVBoxLayout	*layout;
 	QLabel		*version;

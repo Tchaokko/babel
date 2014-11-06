@@ -5,6 +5,11 @@ void	APropos::show()
 	this->windowAPropos->show();
 }
 
+void	APropos::setStyleSheet()
+{
+	this->windowAPropos->setStyleSheet("background-color: #00CED1");
+}
+
 APropos::APropos()
 {
 	this->windowAPropos= new QWidget(NULL);
@@ -17,6 +22,7 @@ APropos::APropos()
 	layout->addWidget(login);
 	layout->addWidget(who);
 	windowAPropos->setLayout(layout);
+	this->setStyleSheet();
 }
 
 APropos::~APropos()

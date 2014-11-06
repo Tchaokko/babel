@@ -16,6 +16,7 @@ public:
 
 private:
 	void	initMenuBar();
+	void	setStyleSheet();
 private:
 	QString		userName;
 	QMainWindow	*window;
