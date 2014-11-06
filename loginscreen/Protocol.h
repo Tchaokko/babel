@@ -37,7 +37,7 @@ namespace Protocol
 		uint32_t	Source;
 		uint32_t	Pwd;
 		uint32_t	Spef;
-	}				Data;
+	}				RequestData;
 
 	typedef struct CallData
 	{
