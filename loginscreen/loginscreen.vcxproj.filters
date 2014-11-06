@@ -1,7 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="APropos.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Babel.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CallWindow.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ContactList.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleProtocol.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="HandleSocket.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Hash.cpp">
@@ -10,138 +25,104 @@
     <ClCompile Include="loginscreen.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
     <ClCompile Include="MainMenu.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\qrc_loginscreen.cpp">
-      <Filter>Garbage</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_MainMenu.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_MainMenu.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="APropos.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="ContactList.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_ContactList.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_ContactList.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="CallWindow.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_CallWindow.cpp">
-      <Filter>Generated Files\Debug</Filter>
+      <Filter>garbage</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_CallWindow.cpp">
-      <Filter>Generated Files\Release</Filter>
+      <Filter>garbage</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_ContactList.cpp">
+      <Filter>garbage</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_ContactList.cpp">
+      <Filter>garbage</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_HandleSocket.cpp">
+      <Filter>garbage</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_HandleSocket.cpp">
+      <Filter>garbage</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MainMenu.cpp">
+      <Filter>garbage</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MainMenu.cpp">
+      <Filter>garbage</Filter>
     </ClCompile>
     <ClCompile Include="ParserXML.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="HandleProtocol.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_HandleSocket.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_HandleSocket.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="Babel.cpp">
-    <ClCompile Include="HandleSocket.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="HandleSocket.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source</Filter>
+    <ClCompile Include="GeneratedFiles\qrc_loginscreen.cpp">
+      <Filter>garbage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Hash.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
-      <Filter>Garbage</Filter>
-    </ClInclude>
     <ClInclude Include="APropos.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="ParserXML.hh">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Babel.h">
+      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="HandleProtocol.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Protocol.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Hash.h">
+      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="IGraphique.h">
-    <ClInclude Include="Babel.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="InterfaceProtocol.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ParserXML.hh">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Protocol.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
+      <Filter>garbage</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="loginscreen.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="loginscreen.qrc">
-      <Filter>Garbage</Filter>
-    </CustomBuild>
-    <CustomBuild Include="loginscreen.ui">
-      <Filter>Garbage</Filter>
-    </CustomBuild>
-    <CustomBuild Include="MainMenu.h">
-      <Filter>Header Files</Filter>
+    <CustomBuild Include="CallWindow.h">
+      <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="ContactList.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="CallWindow.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="HandleSocket.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="loginscreen.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MainMenu.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="loginscreen.qrc">
+      <Filter>garbage</Filter>
+    </CustomBuild>
+    <CustomBuild Include="loginscreen.ui">
+      <Filter>garbage</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h</Extensions>
-      <ParseFiles>true</ParseFiles>
-    </Filter>
     <Filter Include="Source">
-      <UniqueIdentifier>{10be3a08-76a8-4ef7-ba02-413865f1cbf8}</UniqueIdentifier>
+      <UniqueIdentifier>{0ad6d29b-47f5-4512-9851-b42c672024ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Garbage">
-      <UniqueIdentifier>{7101b87d-c5c5-4073-a3a0-ae638bb3c7cd}</UniqueIdentifier>
+    <Filter Include="Header">
+      <UniqueIdentifier>{9be2e291-4667-477b-afec-1c3e187d1c06}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Generated Files">
-      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
-      <Extensions>moc;h;cpp</Extensions>
-      <ParseFiles>true</ParseFiles>
-    </Filter>
-    <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{48748d77-4760-4020-9bf6-75b9cdbcd189}</UniqueIdentifier>
-      <Extensions>cpp;moc</Extensions>
-      <SourceControlFiles>False</SourceControlFiles>
-    </Filter>
-    <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{11c212f2-a979-498c-9a65-f9abebb93c32}</UniqueIdentifier>
-      <Extensions>cpp;moc</Extensions>
-      <SourceControlFiles>False</SourceControlFiles>
+    <Filter Include="garbage">
+      <UniqueIdentifier>{bbf34ff9-037c-4eb9-ae0a-abe59b47ea6c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

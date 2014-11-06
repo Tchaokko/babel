@@ -12,6 +12,7 @@ class APropos
 public:
 	APropos();
 	~APropos();
+
 	void	show();
 
 private:
