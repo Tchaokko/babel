@@ -40,11 +40,11 @@ private:
 	void	initButton();
 	void	getInfo();
 	void	setStyleSheet();
-	void	logIn();
+//	void	logIn();
 
 public slots:
 	void	signIn();
-//	void	logIn();
+	void	logIn();
 	void	SendConnexionRequestToServer();
 };
 

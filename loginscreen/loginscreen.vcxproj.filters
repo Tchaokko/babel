@@ -55,9 +55,6 @@
     <ClCompile Include="HandleProtocol.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="HandleSocket.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_HandleSocket.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -78,10 +75,10 @@
     <ClInclude Include="ParserXML.hh">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Protocol.h">
+    <ClInclude Include="HandleProtocol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HandleProtocol.h">
+    <ClInclude Include="Protocol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

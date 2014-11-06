@@ -78,12 +78,12 @@ LoginScreen::LoginScreen()
 	this->layout->addWidget(this->connectButton, 2, 0, 2, 0);
 	this->layout->addWidget(this->signInButton, 4, 0, 2, 0);
 	QObject::connect(this->signInButton, SIGNAL(clicked()), this, SLOT(signIn()));
-	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(SendConnexionRequestToServer()));
-	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(SendConnexionRequestToServer()));
-	QObject::connect(this->pwdField, SIGNAL(returnPressed()), this, SLOT(SendConnexionRequestToServer()));
-//	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(logIn()));
-//	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(logIn()));
-//	QObject::connect(this->pwdField, SIGNAL(returnPressed()), this, SLOT(logIn()));
+//	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(SendConnexionRequestToServer()));
+//	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(SendConnexionRequestToServer()));
+//	QObject::connect(this->pwdField, SIGNAL(returnPressed()), this, SLOT(SendConnexionRequestToServer()));
+	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(logIn()));
+	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(logIn()));
+	QObject::connect(this->pwdField, SIGNAL(returnPressed()), this, SLOT(logIn()));
 	this->setStyleSheet();
 	this->show();
 }
