@@ -1,6 +1,17 @@
 #include "ContactList.h"
 #include "CallWindow.h"
 
+void		ContactList::setStyleSheet()
+{
+	this->wlist.setStyleSheet("background-color: #FFFFFF;");
+	this->addWindow.setStyleSheet("background-color: #00CED1;");
+	this->addButton.setStyleSheet("background-color: #66e1e3");
+	this->addField.setStyleSheet("background-color: #FFFFFF;");
+	this->delWindow.setStyleSheet("background-color: #00CED1;");
+	this->delButton.setStyleSheet("background-color: #66e1e3");
+	this->delField.setStyleSheet("background-color: #FFFFFF");
+}
+
 void	ContactList::doubleClick(QListWidgetItem *item)
 {
 	QString		label;
@@ -10,12 +21,7 @@ void	ContactList::doubleClick(QListWidgetItem *item)
 	this->call.show();
 }
 
-void	ContactList::sendAddRequestToServer()
-{
-
-}
-
-void	ContactList::sendDelRequestToServer()
+void	ContactList::sendRequestToServer()
 {
 
 }
@@ -85,10 +91,13 @@ ContactList::ContactList(QVBoxLayout *layout)
 	this->addLayout.addWidget(&this->addField, 0, 1);
 	this->addLayout.addWidget(&this->addButton, 2, 0, 2, 0);
 	this->addWindow.setLayout(&this->addLayout);
-	//	connect(this->add, SIGNAL(triggered()), this->list, SLOT(addElem()));
-	//	connect(this->del, SIGNAL(triggered()), this->list, SLOT(delElem()));
-	connect(&this->addButton, SIGNAL(clicked()), this, SLOT(sendAddRequestToServer()));
-	connect(&this->addField, SIGNAL(returnPressed()), this, SLOT(sendAddRequestToServer()));
+	//connect(this->add, SIGNAL(triggered()), this->list, SLOT(addElem()));
+	//connect(this->del, SIGNAL(triggered()), this->list, SLOT(delElem()));
+	
+	connect(&this->addButton, SIGNAL(clicked()), this, SLOT(sendRequestToServer()));
+	connect(&this->addField, SIGNAL(returnPressed()), this, SLOT(sendRequestToServer()));
+	/*if server say yes then call addElem with the name of the new contact*/
+
 
 	this->delWindow.setWindowTitle("Delete contact");
 	this->delLabel.setText("Login of the target :");
@@ -97,8 +106,11 @@ ContactList::ContactList(QVBoxLayout *layout)
 	this->delLayout.addWidget(&this->delField, 0, 1);
 	this->delLayout.addWidget(&this->delButton, 2, 0, 2, 0);
 	this->delWindow.setLayout(&this->delLayout);
-	connect(&this->delButton, SIGNAL(clicked()), this, SLOT(delElem()));
-	connect(&this->delField, SIGNAL(returnPressed()), this, SLOT(delElem()));
+	connect(&this->delButton, SIGNAL(clicked()), this, SLOT(sendRequestToServer()));
+	connect(&this->delField, SIGNAL(returnPressed()), this, SLOT(sendRequestToServer()));
+	/*if server say yes then call delElem with the name of the new contact*/
+
+	this->setStyleSheet();
 }
 
 

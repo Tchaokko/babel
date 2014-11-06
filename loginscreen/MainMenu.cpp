@@ -1,5 +1,11 @@
 #include "MainMenu.h"
 
+void	MainMenu::setStyleSheet()
+{
+	this->mainWidget->setStyleSheet("background-color: #00CED1");
+
+}
+
 void	MainMenu::setUserName(QString const &userName)
 {
 	this->userName = userName;
@@ -48,6 +54,7 @@ MainMenu::MainMenu()
 	this->mainWidget->setLayout(&this->contactLayout);
 	this->window->setCentralWidget(this->mainWidget);
 	this->initMenuBar();
+	this->setStyleSheet();
 	connect(this->add, SIGNAL(triggered()), this->list, SLOT(addWindowFunc()));
 	connect(this->del, SIGNAL(triggered()), this->list, SLOT(delWindowFunc()));
 }

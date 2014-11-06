@@ -20,7 +20,8 @@ public:
 	void		callIncoming(const QString &);
 
 private:
-
+	void		setStyleSheet();
+private:
 	QLabel		*incoming;
 	QPushButton *callButton;
 	QPushButton *acceptButton;
