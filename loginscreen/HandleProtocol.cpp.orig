@@ -1,10 +1,14 @@
 #include "HandleProtocol.h"
 
 bool	HandleProtocol::processRequest(Protocol::RequestData const &data)
+<<<<<<< HEAD
+{
+	if (data.Type == Protocol::CONNECT)
+			;
+=======
 {	
-	//if (data.Type == Protocol::CONNECT)
+>>>>>>> 597800e005a942e9b3ef8eaeba6e3b1b64b95d0f
 	return true;
-	return false;
 }
 
 bool	HandleProtocol::processData(Protocol::CallData const &data)

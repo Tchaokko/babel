@@ -8,21 +8,22 @@
 # include <QtWidgets/qlabel.h>
 # include <QtCore/qstring.h>
 # include <QtWidgets/qpushbutton.h>
-#include "Protocol.h"
-#include "HandleProtocol.h"
-#include "HandleSocket.h"
+# include "IGraphique.h"
+# include "Protocol.h"
+# include "HandleProtocol.h"
+# include "HandleSocket.h"
 # include "MainMenu.h"
 # include "Hash.h"
-#include "ParserXML.hh"
+# include "ParserXML.hh"
 
 
-class LoginScreen : QObject
+class LoginScreen : IGraphique
 {
-	Q_OBJECT
+	//Q_OBJECT
 public:
 	LoginScreen();
-	~LoginScreen();
-	void	show();
+	virtual ~LoginScreen();
+	virtual void	show();
 
 private:
 	MainMenu	mainMenu;
@@ -31,25 +32,23 @@ private:
 	QString		pass;
 	QGridLayout	*layout;
 	QWidget		*window;
-	QLineEdit	*logField;
-	QLineEdit	*pwdField;
-	QLabel		*logLabel;
-	QLabel		*pwdLabel;
-	QPushButton	*connectButton;
-	QPushButton	*signInButton;
+	QLineEdit	logField;
+	QLineEdit	pwdField;
+	QLineEdit	ipField;
+	QLabel		logLabel;
+	QLabel		pwdLabel;
+	QLabel		ipLabel;
+	QPushButton	connectButton;
+	QPushButton	signInButton;
 
 private:
-	void	initLabels();
-	void	initFields();
-	void	initButton();
-	void	getInfo();
-	void	setStyleSheet();
-//	void	logIn();
+	virtual void	getInfo();
+	virtual void	setStyleSheet();
 
-public slots:
-	void	signIn();
-	void	logIn();
-	void	SendConnexionRequestToServer();
+//public slots:
+//	void	signIn();
+//	void	logIn();
+//	void	SendConnexionRequestToServer();
 };
 
 #endif // LOGINSCREEN_H
