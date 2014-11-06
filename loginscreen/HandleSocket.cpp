@@ -50,15 +50,20 @@ void		HandleSocket::processInfo()
 	this->protocolHandler->processRequest(data);
 }
 
-HandleSocket::HandleSocket(QString ip, QString port)
+void		HandleSocket::initSocket()
+{
+	this->hostAdress.setAddress(this->ip);
+	this->udpSocket->bind(this->hostAdress, 2520);
+	this->tcpSocket->bind(this->hostAdress, 4045);
+}
+
+HandleSocket::HandleSocket()
 {
 	this->tcpSocket = new QTcpSocket(0);
 	this->udpSocket = new QUdpSocket(0);
 	this->protocolHandler = new HandleProtocol();
 
-	this->hostAdress.setAddress(ip);
-	this->udpSocket->bind(this->hostAdress, 2520);
-	this->tcpSocket->bind(this->hostAdress, 4045);
+
 	
 	connect(this->udpSocket, SIGNAL(readyRead()), this, SLOT(processData()));
 	connect(this->tcpSocket, SIGNAL(readyRead()), this, SLOT(processInfo()));

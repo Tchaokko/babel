@@ -10,10 +10,6 @@ bool	HandleProtocol::processData(Protocol::CallData const &data)
 	return true;
 }
 
-bool	HandleProtocol::readRequest()
-{
-	return true;
-}
 
 bool	HandleProtocol::sendData(Protocol::CallData const &data)
 {

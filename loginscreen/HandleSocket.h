@@ -17,8 +17,10 @@ class HandleSocket : public QMainWindow
 	} Convert;
 
 public:
-	HandleSocket(QString, QString);
+	HandleSocket();
 	~HandleSocket();
+public:
+	void		initSocket();
 
 private:
 
