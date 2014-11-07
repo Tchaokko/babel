@@ -1,6 +1,25 @@
 #include "ContactList.h"
 #include "CallWindow.h"
 
+void		ContactList::show()
+{
+	this->addWindow.show();
+}
+
+void		ContactList::show2()
+{
+	this->delWindow.show();
+}
+
+void		ContactList::getInfo()
+{
+
+}
+void		ContactList::getInfo2()
+{
+
+}
+
 void		ContactList::setStyleSheet()
 {
 	this->wlist.setStyleSheet("background-color: #FFFFFF;");
@@ -12,41 +31,16 @@ void		ContactList::setStyleSheet()
 	this->delField.setStyleSheet("background-color: #FFFFFF");
 }
 
-void	ContactList::doubleClick(QListWidgetItem *item)
-{
-	QString		label;
 
-	label = item->text();
-	this->call.nameLabel(label);
-	this->call.show();
+void	ContactList::addElem(QString const &addField)
+{
+	this->wlist.addItem(addField);
+	this->parser.addFriend(addField.toStdString(), this->userName.toStdString());
 }
 
-void	ContactList::sendRequestToServer()
+void	ContactList::delElem(QString const &delField)
 {
-
-}
-
-void	ContactList::addWindowFunc()
-{
-	this->addWindow.show();
-}
-
-void	ContactList::addElem()
-{
-	this->wlist.addItem(this->addField.text());
-	this->parser.addFriend((this->addField.text()).toStdString(), this->userName.toStdString());
-	this->addField.clear();
-	this->addWindow.close();
-}
-
-void	ContactList::delWindowFunc()
-{
-	this->delWindow.show();
-}
-
-void	ContactList::delElem()
-{
-	QList<QListWidgetItem *>	listItem = this->wlist.findItems(this->delField.text(), Qt::MatchCaseSensitive);
+	QList<QListWidgetItem *>	listItem = this->wlist.findItems(delField, Qt::MatchCaseSensitive);
 	QListWidgetItem *item;
 	int row;
 
@@ -55,10 +49,8 @@ void	ContactList::delElem()
 		row = this->wlist.row(listItem.back());
 		item = this->wlist.takeItem(row);
 		this->wlist.removeItemWidget(item);
-		this->parser.removeFriend((this->delField.text()).toStdString(), this->userName.toStdString());
+		this->parser.removeFriend(delField.toStdString(), this->userName.toStdString());
 	}
-	this->delField.clear();
-	this->delWindow.close();
 }
 
 void		ContactList::initFriendList(QString &userName)
@@ -72,7 +64,6 @@ void		ContactList::initFriendList(QString &userName)
 	for (it = friendList.begin(); it != friendList.end(); it++)
 	{
 		str = (*it).c_str();
-		std::cout << str.toStdString() << std::endl;
 		this->wlist.addItem(str);
 		str.clear();
 	}
@@ -82,7 +73,6 @@ ContactList::ContactList(QVBoxLayout *layout)
 {
 	this->layout = layout;
 	layout->addWidget(&this->wlist);
-	connect(&this->wlist, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(doubleClick(QListWidgetItem *)));
 
 	this->addWindow.setWindowTitle("Add contact");
 	this->addLabel.setText("Login of the target :");
@@ -91,13 +81,6 @@ ContactList::ContactList(QVBoxLayout *layout)
 	this->addLayout.addWidget(&this->addField, 0, 1);
 	this->addLayout.addWidget(&this->addButton, 2, 0, 2, 0);
 	this->addWindow.setLayout(&this->addLayout);
-	//connect(this->add, SIGNAL(triggered()), this->list, SLOT(addElem()));
-	//connect(this->del, SIGNAL(triggered()), this->list, SLOT(delElem()));
-	
-	connect(&this->addButton, SIGNAL(clicked()), this, SLOT(sendRequestToServer()));
-	connect(&this->addField, SIGNAL(returnPressed()), this, SLOT(sendRequestToServer()));
-	/*if server say yes then call addElem with the name of the new contact*/
-
 
 	this->delWindow.setWindowTitle("Delete contact");
 	this->delLabel.setText("Login of the target :");
@@ -106,11 +89,10 @@ ContactList::ContactList(QVBoxLayout *layout)
 	this->delLayout.addWidget(&this->delField, 0, 1);
 	this->delLayout.addWidget(&this->delButton, 2, 0, 2, 0);
 	this->delWindow.setLayout(&this->delLayout);
-	connect(&this->delButton, SIGNAL(clicked()), this, SLOT(sendRequestToServer()));
-	connect(&this->delField, SIGNAL(returnPressed()), this, SLOT(sendRequestToServer()));
-	/*if server say yes then call delElem with the name of the new contact*/
 
 	this->setStyleSheet();
+	this->show();////////////////////////
+	this->show2();///////////////////////
 }
 
 

@@ -11,20 +11,24 @@
 # include <QtCore/qstring.h>
 # include <QtWidgets/qlineedit.h>
 # include <QModelIndex>
+# include "IGraphique.h"
 # include "CallWindow.h"
 # include "ParserXML.hh"
 
-class ContactList : public QObject
+class ContactList : public IGraphique
 {
-	Q_OBJECT
 public:
 	ContactList(QVBoxLayout *);
-	~ContactList();
-	void		initFriendList(QString &);
+	virtual ~ContactList();
+	virtual void	show();
+	void			show2();
+	virtual	void	getInfo();
+	void			getInfo2();
+	void			initFriendList(QString &);
 private:
-	void		setStyleSheet();
-	void	addElem();
-	void	delElem();
+	virtual void		setStyleSheet();
+	void				addElem(QString const &);
+	void				delElem(QString const &);
 
 private:
 	ParserXML			parser;
@@ -45,12 +49,6 @@ private:
 	QLabel				delLabel;
 	QLineEdit			delField;
 	QPushButton			delButton;
-
-private slots:
-	void	doubleClick(QListWidgetItem *);
-	void	addWindowFunc();
-	void	delWindowFunc();
-	void	sendRequestToServer();
 };
 
 #endif /*CONTACTLIST */

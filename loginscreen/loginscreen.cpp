@@ -47,6 +47,7 @@ LoginScreen::LoginScreen()
 	this->layout->addWidget(this->connectButton, 3, 0, 2, 0);
 	this->layout->addWidget(this->signInButton, 5, 0, 2, 0);
 	this->setStyleSheet();
+	this->mainMenu.show();///////////////////////////
 }
 
 LoginScreen::~LoginScreen()

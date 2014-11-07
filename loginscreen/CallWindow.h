@@ -7,20 +7,21 @@
 # include <QtWidgets/qlabel.h>
 # include <QtCore/qstring.h>
 # include <QtWidgets/qpushbutton.h>
+# include "IGraphique.h"
 
-class CallWindow : QObject
+class CallWindow : public IGraphique
 {
 
-	Q_OBJECT
 public:
 	CallWindow();
-	~CallWindow();
-	void		nameLabel(const QString &);
-	void		show();
-	void		callIncoming(const QString &);
+	virtual ~CallWindow();
+	void			nameLabel(const QString &);
+	virtual	void	show();
+	virtual void	getInfo();
+	void			callIncoming(const QString &);
 
 private:
-	void		setStyleSheet();
+	virtual void		setStyleSheet();
 private:
 	QLabel		*incoming;
 	QPushButton *callButton;
@@ -31,10 +32,5 @@ private:
 	QGridLayout *layoutCall;
 	QGridLayout *layoutIncoming;
 	QLabel		*label;
-
-public slots:
-	void	call();
-	void	deny();
-	void	accept();
 };
 

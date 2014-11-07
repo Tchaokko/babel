@@ -6,17 +6,18 @@
 # include <qstring.h>
 # include <qlayout.h>
 # include <QtWidgets/qlabel.h>
+# include "IGraphique.h"
 
-class APropos
+class APropos : public IGraphique
 {
 public:
 	APropos();
-	~APropos();
-
-	void	show();
+	virtual ~APropos();
+	virtual void	getInfo();
+	virtual void	show();
 
 private:
-	void	setStyleSheet();
+	virtual void	setStyleSheet();
 private:
 	QWidget		*windowAPropos;
 	QVBoxLayout	*layout;

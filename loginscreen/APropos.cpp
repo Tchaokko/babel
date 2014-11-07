@@ -1,5 +1,10 @@
 #include "APropos.h"
 
+void	APropos::getInfo()
+{
+
+}
+
 void	APropos::show()
 {
 	this->windowAPropos->show();
@@ -23,8 +28,12 @@ APropos::APropos()
 	layout->addWidget(who);
 	windowAPropos->setLayout(layout);
 	this->setStyleSheet();
+	this->show();
 }
 
 APropos::~APropos()
 {
+	delete this->version;
+	delete this->login;
+	delete this->who;
 }
