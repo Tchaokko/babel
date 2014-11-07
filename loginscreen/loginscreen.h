@@ -19,6 +19,8 @@
 
 class LoginScreen : public IGraphique
 {
+private:
+	Q_OBJECT;
 public:
 	LoginScreen();
 	virtual ~LoginScreen();

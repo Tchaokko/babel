@@ -31,28 +31,10 @@
     <ClCompile Include="MainMenu.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_CallWindow.cpp">
-      <Filter>garbage</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_CallWindow.cpp">
-      <Filter>garbage</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_ContactList.cpp">
-      <Filter>garbage</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_ContactList.cpp">
-      <Filter>garbage</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_HandleSocket.cpp">
       <Filter>garbage</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_HandleSocket.cpp">
-      <Filter>garbage</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_MainMenu.cpp">
-      <Filter>garbage</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_MainMenu.cpp">
       <Filter>garbage</Filter>
     </ClCompile>
     <ClCompile Include="ParserXML.cpp">
@@ -60,6 +42,21 @@
     </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_loginscreen.cpp">
       <Filter>garbage</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_Babel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_Babel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_loginscreen.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_loginscreen.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="addWindow.cpp">
+      <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,9 +67,6 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Hash.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="IGraphique.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="InterfaceProtocol.h">
@@ -86,6 +80,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
       <Filter>garbage</Filter>
+    </ClInclude>
+    <ClInclude Include="addWindow.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +110,9 @@
     <CustomBuild Include="Babel.h">
       <Filter>Header</Filter>
     </CustomBuild>
+    <CustomBuild Include="IGraphique.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source">
@@ -131,6 +131,11 @@
     </Filter>
     <Filter Include="Generated Files\Debug">
       <UniqueIdentifier>{db235782-83fd-49cf-9d23-4cb40600ba84}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{5a7040a6-ab92-4a7a-b4e9-c82cfcc0079f}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>

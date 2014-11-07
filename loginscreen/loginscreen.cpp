@@ -47,6 +47,11 @@ LoginScreen::LoginScreen()
 	this->layout->addWidget(this->connectButton, 3, 0, 2, 0);
 	this->layout->addWidget(this->signInButton, 5, 0, 2, 0);
 	this->setStyleSheet();
+	QObject::connect(this->signInButton, SIGNAL(clicked()), this, SLOT(signIn()));
+	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(sendConnexionRequestToServer()));
+	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
+	QObject::connect(this->ipField, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
+
 	this->mainMenu.show();///////////////////////////
 }
 

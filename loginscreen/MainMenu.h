@@ -28,6 +28,7 @@ private:
 	APropos		*info;
 	ContactList	*list;
 	QVBoxLayout	contactLayout;
+
 };
 
 #endif /* !MAINMENU_H_*/

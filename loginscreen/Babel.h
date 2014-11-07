@@ -5,8 +5,12 @@
 #include <HandleSocket.h>
 #include <HandleProtocol.h>
 #include <InterfaceProtocol.h>
-class Babel : QObject 
+
+class Babel : public QObject 
 {
+private:
+	Q_OBJECT;
+
 public:
 	Babel();
 	~Babel();
@@ -17,9 +21,9 @@ private:
 	HandleProtocol	protocolHandler;
 
 protected:
-	QString			ip;
-	QString			Pwd;
-	QString			Log;
+	QString			field1;
+	QString			field2;
+	QString			field3;
 
 protected slots:
 
