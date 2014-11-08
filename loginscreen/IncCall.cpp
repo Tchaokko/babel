@@ -24,13 +24,25 @@ void	IncCall::show()
 
 void	IncCall::deny()
 {
-	/*Change the QLineEdit*/
+	int		nb = InternalProtocol::DENY_CALL;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
 	this->widget->close();
 }
 
 void	IncCall::accept()
 {
-	/*Change the QLineEdit*/
+	int		nb = InternalProtocol::ACCEPT_CALL;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
 	this->widget->close();
 }
 

@@ -72,17 +72,35 @@ void	MainMenu::initMenuBar()
 void		MainMenu::doubleClick(QListWidgetItem *item)
 {
 	this->selection = item->text();
-	/*modifier QlineEdit*/
+	int		nb = InternalProtocol::CALL_CONTACT;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
 }
 
 void		MainMenu::showAddWindow()
 {
-	/*modif QlineEdit*/
+	int		nb = InternalProtocol::ADD_CONTACT;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
 }
 
 void		MainMenu::showDelWindow()
 {
-	/*modif QlineEdit*/
+	int		nb = InternalProtocol::DEL_CONTACT;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
 }
 
 MainMenu::MainMenu(QLineEdit &action) : action(action)

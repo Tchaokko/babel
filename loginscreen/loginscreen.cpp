@@ -35,12 +35,24 @@ QString	const	&LoginScreen::getInfo3()
 
 void		LoginScreen::sendSignIn()
 {
-	/*modifier le QLineEdit*/
+	int		nb = InternalProtocol::SIGN_IN;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
 }
 
 void		LoginScreen::sendConnexionRequest()
 {
-	/*modifier le QLineEdit*/
+	int		nb = InternalProtocol::LOG_IN;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
 }
 
 LoginScreen::LoginScreen(QLineEdit &action) : action(action)

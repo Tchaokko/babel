@@ -41,5 +41,6 @@ namespace InternalProtocol
 	typedef enum SpeficifationLoginScreen
 	{
 		LOG_IN = 1,
+		SIGN_IN
 	}SpefLogin;
 }
