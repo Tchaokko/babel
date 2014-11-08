@@ -1,5 +1,97 @@
 #include "WindowManager.h"
 
+void	WindowManager::connectDone()
+{
+
+}
+
+void	WindowManager::connectDenied()
+{
+
+}
+
+void	WindowManager::disconnectIncoming()
+{
+
+}
+
+void	WindowManager::callIncoming()
+{
+
+}
+
+void	WindowManager::declinedCall()
+{
+
+}
+
+void	WindowManager::askContact()
+{
+
+}
+
+void	WindowManager::acceptedContact()
+{
+
+}
+
+void	WindowManager::refusedContact()
+{
+
+}
+
+void	WindowManager::connectServ(Protocol::Spef Type, uint32_t Dest)
+{
+
+}
+
+void	WindowManager::signIn(Protocol::Spef Type, uint32_t Dest)
+{
+
+}
+
+void	WindowManager::call(Protocol::Spef Type, uint32_t Dest)
+{
+
+}
+
+void	WindowManager::takeCall(Protocol::Spef Type, uint32_t Dest)
+{
+
+}
+
+void	WindowManager::declineCall(Protocol::Spef Type, uint32_t Dest)
+{
+
+}
+
+void	WindowManager::addContact(Protocol::Spef Type, uint32_t Dest)
+{
+
+}
+
+void	WindowManager::acceptContact(Protocol::Spef Type, uint32_t Dest)
+{
+
+}
+
+void	WindowManager::refuseContact(Protocol::Spef Type, uint32_t Dest)
+{
+
+}
+
+bool	WindowManager::processRequest(InternalProtocol::SpefSock Spef)
+{
+
+	for (int count = 0; count < 8; count++)
+	{
+		if (Spef == count)
+			processFunction[count]();
+	}
+
+	return true;
+}
+
 void			WindowManager::checkLoginScreen()
 {
 
@@ -84,6 +176,7 @@ WindowManager::WindowManager()
 	checkMenuFunction.push_back(WindowManager::menuAddContact);
 	checkMenuFunction.push_back(WindowManager::menuDelContact);
 	checkMenuFunction.push_back(WindowManager::menuCallContact);
+	connect(&this->checkProtocol, SIGNAL(textChanged(const QString &)), this, SLOT(checkProtocol()));
 	connect(&this->checkAddWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkAddWindow()));
 	connect(&this->checkMainMenu, SIGNAL(textChanged(const QString &)), this, SLOT(checkMainMenu()));
 	connect(&this->checkIncomingCallWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkIncomingCallWindow()));

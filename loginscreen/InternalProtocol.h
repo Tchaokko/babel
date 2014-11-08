@@ -1,5 +1,10 @@
 namespace InternalProtocol
 {
+	typedef enum SpecificationSocket
+	{
+
+	}SpefSock;
+
 	typedef enum SpecificationConfWindow
 	{
 		HANGOUT = 1,

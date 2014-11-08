@@ -2,7 +2,6 @@
 #include <qlineedit.h>
 #include <IGraphique.h>
 #include "InternalProtocol.h"
-#include "ContactList.h"
 #include "MainMenu.h"
 #include "CallWindow.h"
 #include "loginscreen.h"
@@ -19,8 +18,36 @@ public:
 
 private:
 	std::vector<void(*)() >	checkMenuFunction;
+	std::vector<void(*)() >	processFunction;
 
 private:
+	static	void	connectDone();
+	static	void	connectDenied();
+	static	void	disconnectIncoming();
+	static	void	callIncoming();
+	static	void	declinedCall();
+	static	void	askContact();
+	static	void	acceptedContact();
+	static	void	refusedContact();
+
+	static	void	connectServ(Protocol::Spef, uint32_t);
+	static	void	disconnectSend(Protocol::Spef, uint32_t);
+	static	void	signIn(Protocol::Spef, uint32_t);
+	static	void	call(Protocol::Spef, uint32_t);
+	static	void	takeCall(Protocol::Spef, uint32_t);
+	static	void	declineCall(Protocol::Spef, uint32_t);
+	static	void	addContact(Protocol::Spef, uint32_t);
+	static	void	acceptContact(Protocol::Spef, uint32_t);
+	static	void	refuseContact(Protocol::Spef, uint32_t);
+
+	virtual bool	processRequest(InternalProtocol::SpefSock);
+	virtual bool	sendRequest(Protocol::Spef, uint32_t);
+
+private:
+
+	HandleSocket	socketHandler;
+
+	QLineEdit		checkProtocol;
 	QLineEdit		checkCallWindow;
 	QLineEdit		checkMainMenu;
 	QLineEdit		checkIncomingCallWindow;

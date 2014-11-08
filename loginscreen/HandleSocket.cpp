@@ -23,7 +23,6 @@ void		HandleSocket::processData()
 			++count;
 		}
 	}
-	this->protocolHandler->processCallData(data);
 }
 
 
@@ -47,7 +46,6 @@ void		HandleSocket::processInfo()
 			++count;
 		}
 	}
-	this->protocolHandler->processRequest(data);
 }
 
 void		HandleSocket::initSocket()
@@ -61,7 +59,6 @@ HandleSocket::HandleSocket()
 {
 	this->tcpSocket = new QTcpSocket(0);
 	this->udpSocket = new QUdpSocket(0);
-	this->protocolHandler = new HandleProtocol();
 
 
 	
