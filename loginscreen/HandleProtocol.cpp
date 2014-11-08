@@ -112,8 +112,64 @@ bool	HandleProtocol::sendRequest(Protocol::Spef Type, uint32_t Dest)
 	return true;
 }
 
+void		HandleProtocol::processData()
+{
+	QByteArray				buffer;
+	QHostAddress			sender;
+	quint16					senderPort;
+	quint32					type;
+	Protocol::CallData		data;
+	char					*tmp = reinterpret_cast<char*>(&data);
+	int						count = 0;
+
+	buffer.resize(sizeof(this->_requestData));
+	this->udpSocket->readDatagram(buffer.data(), buffer.size(), &sender, &senderPort);
+	if (!buffer.isEmpty())
+	{
+		while (count != sizeof(data))
+		{
+			tmp[count] = buffer.at(count);
+			++count;
+		}
+	}
+	this->processCallData(data);
+}
+
+void		HandleProtocol::processInfo()
+{
+	QByteArray				buffer;
+	QHostAddress			sender;
+	quint16					senderPort;
+	Protocol::RequestData	data;
+	char					*tmp = reinterpret_cast<char*>(&data);
+	int						count = 0;
+
+	buffer.resize(sizeof(this->_requestData));
+	buffer = this->tcpSocket->read(sizeof(this->_requestData));
+
+	if (!buffer.isEmpty())
+	{
+		while (count != sizeof(data))
+		{
+			tmp[count] = buffer.at(count);
+			++count;
+		}
+	}
+	this->processRequest(data);
+}
+
+void		HandleProtocol::initSocket()
+{
+	this->hostAdress.setAddress("");
+	this->udpSocket->bind(this->hostAdress, 2520);
+	this->tcpSocket->bind(this->hostAdress, 4045);
+}
+
 HandleProtocol::HandleProtocol()
 {
+	this->tcpSocket = new QTcpSocket(0);
+	this->udpSocket = new QUdpSocket(0);
+
 	processFunction.push_back(HandleProtocol::connectDone);
 	processFunction.push_back(HandleProtocol::connectDenied);
 	processFunction.push_back(HandleProtocol::disconnectIncoming);
@@ -132,6 +188,9 @@ HandleProtocol::HandleProtocol()
 	sendFunction.push_back(HandleProtocol::addContact);
 	sendFunction.push_back(HandleProtocol::acceptContact);
 	sendFunction.push_back(HandleProtocol::refuseContact);
+	
+	connect(this->udpSocket, SIGNAL(readyRead()), this, SLOT(processData()));
+	connect(this->tcpSocket, SIGNAL(readyRead()), this, SLOT(processInfo()));
 }
 
 HandleProtocol::~HandleProtocol()

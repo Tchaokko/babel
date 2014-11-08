@@ -2,16 +2,27 @@
 # define HANDLEPROTOCOL
 # include "Protocol.h"
 #include "InterfaceProtocol.h"
+#include <qbytearray.h>
+#include <QtNetwork\qtcpsocket.h>
+#include <QtNetwork\qudpSocket.h>
+#include <qhostaddress.h>
 #include <vector>
 
-class HandleProtocol : public InterfaceProtocol
+class HandleProtocol : public InterfaceProtocol, public QObject
 {
+
+	Q_OBJECT
+
+private:
 	Protocol::RequestData	_requestData;
 	Protocol::CallData		_data;
 	std::vector<void(*)(Protocol::Spef, uint32_t) >	sendFunction;
 	std::vector<void(*)(Protocol::RequestData const &data) >	processFunction;
-	
-public:
+	QHostAddress			hostAdress;
+	QTcpSocket				*tcpSocket;
+	QUdpSocket				*udpSocket;
+
+private:
 	HandleProtocol();
 	virtual ~HandleProtocol();
 
@@ -39,7 +50,10 @@ public:
 	static	void	acceptContact(Protocol::Spef, uint32_t);
 	static	void	refuseContact(Protocol::Spef, uint32_t);
 
-
+private:
+	void			initSocket();
+	void			processData();
+	void			processInfo();
 };
 
 #endif /* HANDLEPROTOCOL */

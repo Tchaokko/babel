@@ -10,12 +10,6 @@ class HandleSocket : public QMainWindow
 
 	Q_OBJECT
 
-	typedef union Convert
-	{
-		char	tmp[4];
-		quint32	type;
-	} Convert;
-
 public:
 	HandleSocket();
 	~HandleSocket();

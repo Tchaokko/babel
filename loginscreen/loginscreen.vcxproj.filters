@@ -67,12 +67,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_WindowManager.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_HandleProtocol.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_HandleProtocol.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="APropos.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="HandleProtocol.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Hash.h">
@@ -126,6 +129,9 @@
       <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="WindowManager.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="HandleProtocol.h">
       <Filter>Header</Filter>
     </CustomBuild>
   </ItemGroup>
