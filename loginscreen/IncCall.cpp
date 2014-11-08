@@ -41,6 +41,7 @@ IncCall::IncCall(QLineEdit &action) : action(action)
 	this->label1 = new QLabel;
 	this->button1 = new QPushButton("Accept");
 	this->button2 = new QPushButton("Deny");
+	this->setStyleSheet();
 	this->layout->addWidget(this->label1, 0, 0);
 	this->layout->addWidget(this->button1, 1, 0);
 	this->layout->addWidget(this->button1, 1, 1);

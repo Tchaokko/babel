@@ -17,6 +17,6 @@ private:
 private:
 	QLineEdit				&action;
 private slots:
-void					call();
+void						call();
 };
 
