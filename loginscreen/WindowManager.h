@@ -4,6 +4,8 @@
 #include "InternalProtocol.h"
 #include "MainMenu.h"
 #include "CallWindow.h"
+#include "addWindow.h"
+#include "delWindow.h"
 #include "loginscreen.h"
 #include <vector>
 
@@ -12,13 +14,45 @@ class WindowManager : public QObject
 
 	Q_OBJECT
 
+	typedef enum State
+	{
+		REST = 1,
+		INCOMING_CALL,
+		CALLING,
+	}State;
+
 public:
 	WindowManager();
 	~WindowManager();
 
 private:
-	std::vector<void(*)() >	checkMenuFunction;
+	typedef struct windowObject
+	{
+		MainMenu	_MainMenu;
+		addWindow	_addWindow;
+		delWindow	_delWindow;
+		LoginScreen	_loginScreen;
+	}wObject;
+
+private:
+	std::vector<void(*)(wObject&) >	checkMenuFunction;
 	std::vector<void(*)() >	processFunction;
+private:
+
+	HandleSocket	socketHandler;
+	State			managerState;
+	wObject			windowsObject;
+	QLineEdit		checkProtocol;
+	QLineEdit		checkCallWindow;
+	QLineEdit		checkMainMenu;
+	QLineEdit		checkIncomingCallWindow;
+	QLineEdit		checkLoginScreen;
+	QLineEdit		checkAddWindow;
+	QLineEdit		checkDelWindow;
+
+private:
+	void		setState(State );
+	State		getState();
 
 private:
 	static	void	connectDone();
@@ -43,22 +77,12 @@ private:
 	virtual bool	processRequest(InternalProtocol::SpefSock);
 	virtual bool	sendRequest(Protocol::Spef, uint32_t);
 
-private:
 
-	HandleSocket	socketHandler;
-
-	QLineEdit		checkProtocol;
-	QLineEdit		checkCallWindow;
-	QLineEdit		checkMainMenu;
-	QLineEdit		checkIncomingCallWindow;
-	QLineEdit		checkLoginScreen;
-	QLineEdit		checkAddWindow;
-	QLineEdit		checkDelWindow;
 
 private:
-	static void		menuAddContact();
-	static void		menuDelContact();
-	static void		menuCallContact();
+	static void		menuAddContact(wObject &);
+	static void		menuDelContact(wObject &);
+	static void		menuCallContact(wObject &);
 
 private slots:
 	void			checkCallWindow();

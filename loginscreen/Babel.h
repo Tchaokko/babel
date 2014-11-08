@@ -25,7 +25,6 @@ public:
 private:
 	
 	HandleSocket	socketHandler;
-	HandleProtocol	protocolHandler;
 
 protected slots:
 

@@ -9,18 +9,21 @@ class LoginScreen : public IGraphique
 	Q_OBJECT
 public:
 	LoginScreen(QLineEdit &action);
-	virtual ~LoginScreen();
-	virtual void	show();
+	virtual					 ~LoginScreen();
+	virtual void			show();
 	virtual QString const	&getInfo();
 	QString const			&getInfo2();
 	QString const			&getInfo3();
+
 private:
-	QLineEdit	&action;
+	QLineEdit				&action;
+
 private:
-	virtual void	setStyleSheet();
+	virtual void			setStyleSheet();
+
 private slots:
-	void	sendSignIn();
-	void	sendConnexionRequest();
+	void					sendSignIn();
+	void					sendConnexionRequest();
 };
 
 
