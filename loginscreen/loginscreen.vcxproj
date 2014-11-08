@@ -80,7 +80,6 @@
     <ClCompile Include="APropos.cpp" />
     <ClCompile Include="Babel.cpp" />
     <ClCompile Include="CallWindow.cpp" />
-    <ClCompile Include="ContactList.cpp" />
     <ClCompile Include="delWindow.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_Babel.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -185,20 +184,6 @@
     </CustomBuild>
     <ClInclude Include="InterfaceProtocol.h" />
     <ClInclude Include="ParserXML.hh" />
-    <CustomBuild Include="ContactList.h">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-      </Command>
-    </CustomBuild>
     <CustomBuild Include="CallWindow.h">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </Message>

@@ -10,9 +10,6 @@
     <ClCompile Include="CallWindow.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="ContactList.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="HandleProtocol.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -105,9 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="CallWindow.h">
-      <Filter>Header</Filter>
-    </CustomBuild>
-    <CustomBuild Include="ContactList.h">
       <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="HandleSocket.h">
