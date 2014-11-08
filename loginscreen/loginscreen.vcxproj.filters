@@ -61,6 +61,15 @@
     <ClCompile Include="delWindow.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="WindowManager.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_WindowManager.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_WindowManager.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="APropos.h">
@@ -90,6 +99,9 @@
     <ClInclude Include="delWindow.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="InternalProtocol.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="CallWindow.h">
@@ -117,6 +129,9 @@
       <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="IGraphique.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="WindowManager.h">
       <Filter>Header</Filter>
     </CustomBuild>
   </ItemGroup>
