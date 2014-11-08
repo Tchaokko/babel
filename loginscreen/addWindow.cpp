@@ -2,7 +2,13 @@
 
 void	addWindow::sendAddFriendRequest()
 {
-	/*Changer le QLineEdit*/
+	int		nb = InternalProtocol::ADD_CONTACT;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
 }
 
 QString const	&addWindow::getInfo()

@@ -2,7 +2,13 @@
 
 void	delWindow::sendDelFriendRequest()
 {
-	/*Changer le QLineEdit*/
+	int		nb = InternalProtocol::DEL_CONTACT;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
 }
 
 void	delWindow::setStyleSheet()
