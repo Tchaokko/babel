@@ -80,6 +80,7 @@
     <ClCompile Include="APropos.cpp" />
     <ClCompile Include="Babel.cpp" />
     <ClCompile Include="CallWindow.cpp" />
+    <ClCompile Include="confWindow.cpp" />
     <ClCompile Include="delWindow.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_addWindow.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -164,6 +165,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="confWindow.h" />
     <ClInclude Include="Hash.h" />
     <ClInclude Include="IGraphique.h" />
     <ClInclude Include="InterfaceProtocol.h" />
