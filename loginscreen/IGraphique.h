@@ -1,12 +1,22 @@
 #ifndef IGRAPHIQUE
 # define IGRAPHIQUE
-# include "Babel.h"
+#include <qobject.h>
+#include <qlistwidget.h>
+#include <HandleSocket.h>
+#include <HandleProtocol.h>
+#include <InterfaceProtocol.h>
+#include <QtWidgets\qlineedit.h>
+#include <QtWidgets\qpushbutton.h>
+#include <QtWidgets\qlabel.h>
+#include <QtWidgets\qgridlayout.h>
+#include <QtWidgets\qmenu.h>
+#include <QtWidgets\qmenubar.h>
 
-class IGraphique : public Babel
+class IGraphique : public QObject
 {
 public:
 	virtual void	show() = 0;
-	virtual void	getInfo() = 0;
+	virtual QString	const &getInfo() = 0;
 protected:
 	virtual void	setStyleSheet() = 0;
 	QWidget			*widget;

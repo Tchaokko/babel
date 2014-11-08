@@ -3,13 +3,17 @@
 
 class addWindow : public IGraphique
 {
+	Q_OBJECT
 public:
-	addWindow(QString &);
+	addWindow(QLineEdit &);
 	virtual ~addWindow();
 	virtual void	show();
-	virtual	void	getInfo();
+	virtual	QString const &getInfo();
 private:
 	virtual	void	setStyleSheet();
-	QString	&addFriend;
+private:
+	QLineEdit	&action;
+private slots:
+	void			sendAddFriendRequest();
 };
 

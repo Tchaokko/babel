@@ -1,49 +1,26 @@
 #ifndef LOGINSCREEN_H
 # define LOGINSCREEN_H
 
-# include <QtWidgets/QApplication>
-# include <QtWidgets/QMainWindow>
-# include <QtWidgets/qlineedit.h>
-# include <QtWidgets/qboxlayout.h>
-# include <QtWidgets/qlabel.h>
-# include <QtCore/qstring.h>
-# include <QtWidgets/qpushbutton.h>
 # include "IGraphique.h"
-# include "Protocol.h"
-# include "HandleProtocol.h"
-# include "HandleSocket.h"
-# include "MainMenu.h"
 # include "Hash.h"
-# include "ParserXML.hh"
-
 
 class LoginScreen : public IGraphique
 {
-private:
-	Q_OBJECT;
+	Q_OBJECT
 public:
-	LoginScreen();
+	LoginScreen(QLineEdit &action);
 	virtual ~LoginScreen();
 	virtual void	show();
-	virtual void	getInfo();
+	virtual QString const	&getInfo();
+	QString const			&getInfo2();
+	QString const			&getInfo3();
 private:
-	MainMenu	mainMenu;
-	Hash		_hash;
-	QString		log;
-	QString		pass;
-	QGridLayout	*layout;
-	QWidget		*window;
-	QLineEdit	*logField;
-	QLineEdit	*pwdField;
-	QLineEdit	*ipField;
-	QLabel		*logLabel;
-	QLabel		*pwdLabel;
-	QLabel		*ipLabel;
-	QPushButton	*connectButton;
-	QPushButton	*signInButton;
-
+	QLineEdit	&action;
 private:
 	virtual void	setStyleSheet();
+private slots:
+	void	sendSignIn();
+	void	sendConnexionRequest();
 };
 
 

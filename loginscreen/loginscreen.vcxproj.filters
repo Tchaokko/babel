@@ -4,13 +4,7 @@
     <ClCompile Include="APropos.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Babel.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="CallWindow.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="HandleProtocol.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="HandleSocket.cpp">
@@ -19,17 +13,8 @@
     <ClCompile Include="Hash.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="loginscreen.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_HandleSocket.cpp">
-      <Filter>garbage</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_HandleSocket.cpp">
       <Filter>garbage</Filter>
@@ -40,24 +25,6 @@
     <ClCompile Include="GeneratedFiles\qrc_loginscreen.cpp">
       <Filter>garbage</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_Babel.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_Babel.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_loginscreen.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_loginscreen.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="addWindow.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="delWindow.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="WindowManager.cpp">
       <Filter>Source</Filter>
     </ClCompile>
@@ -67,10 +34,40 @@
     <ClCompile Include="GeneratedFiles\Release\moc_WindowManager.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_HandleProtocol.cpp">
+    <ClCompile Include="addWindow.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_addWindow.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_HandleProtocol.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_addWindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Babel.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_Babel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_Babel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="delWindow.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_delWindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_delWindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MainMenu.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MainMenu.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
   </ItemGroup>
@@ -93,13 +90,10 @@
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
       <Filter>garbage</Filter>
     </ClInclude>
-    <ClInclude Include="addWindow.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="delWindow.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="InternalProtocol.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="IGraphique.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
@@ -110,28 +104,25 @@
     <CustomBuild Include="HandleSocket.h">
       <Filter>Header</Filter>
     </CustomBuild>
-    <CustomBuild Include="loginscreen.h">
-      <Filter>Header</Filter>
-    </CustomBuild>
-    <CustomBuild Include="MainMenu.h">
-      <Filter>Header</Filter>
-    </CustomBuild>
     <CustomBuild Include="loginscreen.qrc">
       <Filter>garbage</Filter>
     </CustomBuild>
     <CustomBuild Include="loginscreen.ui">
       <Filter>garbage</Filter>
     </CustomBuild>
-    <CustomBuild Include="Babel.h">
-      <Filter>Header</Filter>
-    </CustomBuild>
-    <CustomBuild Include="IGraphique.h">
-      <Filter>Header</Filter>
-    </CustomBuild>
     <CustomBuild Include="WindowManager.h">
       <Filter>Header</Filter>
     </CustomBuild>
-    <CustomBuild Include="HandleProtocol.h">
+    <CustomBuild Include="addWindow.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Babel.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="delWindow.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MainMenu.h">
       <Filter>Header</Filter>
     </CustomBuild>
   </ItemGroup>

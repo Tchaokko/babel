@@ -2,14 +2,17 @@
 #include "IGraphique.h"
 class delWindow : public IGraphique
 {
+	Q_OBJECT
 public:
-	delWindow(QString &);
+	delWindow(QLineEdit &);
 	virtual ~delWindow();
 	virtual void	show();
-	virtual	void	getInfo();
+	virtual	QString const	&getInfo();
 private:
 	virtual	void	setStyleSheet();
 private:
-	QString	&delFriend;
+	QLineEdit	&action;
+private slots:
+	void			sendDelFriendRequest();
 };
 

@@ -3,66 +3,83 @@
 
 void	LoginScreen::setStyleSheet()
 {
-	this->window->setStyleSheet("background-color: #00CED1;");
-	this->connectButton->setStyleSheet("background-color: #66e1e3;");
-	this->signInButton->setStyleSheet("background-color: #66e1e3;");
-	this->logLabel->setStyleSheet("background-color: rgba(0,0,0,0)");
-	this->pwdLabel->setStyleSheet("background-color: rgba(0,0,0,0)");
-	this->logField->setStyleSheet("background-color: rgba(255,255,255,255)");
-	this->pwdField->setStyleSheet("background-color: rgba(255,255,255,255)");
-	this->ipField->setStyleSheet("background-color: rgba(255,255,255,255)");
+	this->widget->setStyleSheet("background-color: #00CED1;");
+	this->button1->setStyleSheet("background-color: #66e1e3;");
+	this->button2->setStyleSheet("background-color: #66e1e3;");
+	this->label1->setStyleSheet("background-color: rgba(0,0,0,0)");
+	this->label2->setStyleSheet("background-color: rgba(0,0,0,0)");
+	this->field1->setStyleSheet("background-color: rgba(255,255,255,255)");
+	this->field2->setStyleSheet("background-color: rgba(255,255,255,255)");
+	this->field3->setStyleSheet("background-color: rgba(255,255,255,255)");
 }
 
 void	LoginScreen::show()
 {
-	this->window->show();
+	this->widget->show();
 }
 
-void	LoginScreen::getInfo()
+QString	const	&LoginScreen::getInfo()
 {
-	this->pass = this->pwdField->text();
-	this->log = this->logField->text();
+	return (this->field1->text());
 }
 
-LoginScreen::LoginScreen()
+QString	const	&LoginScreen::getInfo2()
 {
-	this->window = new QWidget(NULL);
+	return (this->field2->text());
+}
+
+QString	const	&LoginScreen::getInfo3()
+{
+	return (this->field3->text());
+}
+
+void		LoginScreen::sendSignIn()
+{
+	/*modifier le QLineEdit*/
+}
+
+void		LoginScreen::sendConnexionRequest()
+{
+	/*modifier le QLineEdit*/
+}
+
+LoginScreen::LoginScreen(QLineEdit &action) : action(action)
+{
+	this->widget = new QWidget(NULL);
 	this->layout = new QGridLayout();
-	this->connectButton = new QPushButton("Connect");
-	this->signInButton = new QPushButton("Sign in");
-	this->logLabel = new QLabel("Login: ");
-	this->pwdLabel = new QLabel("Password:");
-	this->logField = new QLineEdit(NULL);
-	this->pwdField = new QLineEdit(NULL);
-	this->pwdField->setEchoMode(QLineEdit::Password);
-	this->ipField = new QLineEdit(NULL);
-	this->ipLabel = new QLabel("Ip server:");
-	this->window->setLayout(this->layout);
-	this->layout->addWidget(this->logLabel, 0, 0);
-	this->layout->addWidget(this->logField, 0, 1);
-	this->layout->addWidget(this->pwdLabel, 1, 0);
-	this->layout->addWidget(this->pwdField, 1, 1);
-	this->layout->addWidget(this->ipLabel, 2, 0);
-	this->layout->addWidget(this->ipField, 2, 1);
-	this->layout->addWidget(this->connectButton, 3, 0, 2, 0);
-	this->layout->addWidget(this->signInButton, 5, 0, 2, 0);
+	this->button1 = new QPushButton("Connect");
+	this->button2 = new QPushButton("Sign in");
+	this->label1 = new QLabel("Login: ");
+	this->label2 = new QLabel("Password:");
+	this->field1 = new QLineEdit(NULL);
+	this->field2 = new QLineEdit(NULL);
+	this->field2->setEchoMode(QLineEdit::Password);
+	this->field3 = new QLineEdit(NULL);
+	this->label3 = new QLabel("Ip server:");
+	this->widget->setLayout(this->layout);
+	this->layout->addWidget(this->label1, 0, 0);
+	this->layout->addWidget(this->field1, 0, 1);
+	this->layout->addWidget(this->label2, 1, 0);
+	this->layout->addWidget(this->field2, 1, 1);
+	this->layout->addWidget(this->label3, 2, 0);
+	this->layout->addWidget(this->field3, 2, 1);
+	this->layout->addWidget(this->button1, 3, 0, 2, 0);
+	this->layout->addWidget(this->button2, 5, 0, 2, 0);
 	this->setStyleSheet();
-	QObject::connect(this->signInButton, SIGNAL(clicked()), this, SLOT(signIn()));
-	QObject::connect(this->connectButton, SIGNAL(clicked()), this, SLOT(sendConnexionRequestToServer()));
-	QObject::connect(this->logField, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
-	QObject::connect(this->ipField, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
-
-	this->mainMenu.show();///////////////////////////
+	QObject::connect(this->button2, SIGNAL(clicked()), this, SLOT(signIn()));
+	QObject::connect(this->button1, SIGNAL(clicked()), this, SLOT(sendConnexionRequestToServer()));
+	QObject::connect(this->field1, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
+	QObject::connect(this->field2, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
+	QObject::connect(this->field3, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
 }
 
 LoginScreen::~LoginScreen()
 {
-	delete this->logField;
-	delete this->pwdField;
-	delete this->ipField;
-	delete this->logLabel;
-	delete this->ipLabel;
-	delete this->pwdLabel;
+	delete this->field1;
+	delete this->field2;
+	delete this->field3;
+	delete this->label1;
+	delete this->label2;
+	delete this->label3;
 	delete this->layout;
-	delete this->window;
 }

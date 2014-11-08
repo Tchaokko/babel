@@ -1,5 +1,10 @@
 #include "delWindow.h"
 
+void	delWindow::sendDelFriendRequest()
+{
+	/*Changer le QLineEdit*/
+}
+
 void	delWindow::setStyleSheet()
 {
 	this->widget->setStyleSheet("background-color: #00CED1;");
@@ -12,12 +17,12 @@ void	delWindow::show()
 	this->widget->show();
 }
 
-void	delWindow::getInfo()
+QString const	&delWindow::getInfo()
 {
-	this->delFriend = this->field1->text();
+	return (this->field1->text());
 }
 
-delWindow::delWindow(QString &delFriend) : delFriend(delFriend)
+delWindow::delWindow(QLineEdit &action) : action(action)
 {
 	this->widget = new QWidget(NULL);
 	this->widget->setWindowTitle("Del contact");

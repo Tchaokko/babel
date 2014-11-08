@@ -11,6 +11,7 @@
 #include <QtWidgets\qgridlayout.h>
 #include <QtWidgets\qmenu.h>
 #include <QtWidgets\qmenubar.h>
+#include "HandleProtocol.h"
 
 class Babel : public QObject 
 {
@@ -26,11 +27,6 @@ private:
 	HandleSocket	socketHandler;
 	HandleProtocol	protocolHandler;
 
-protected:
-	QString			save1;
-	QString			save2;
-	QString			save3;
-
 protected slots:
 
 	void	signIn();
@@ -39,8 +35,8 @@ protected slots:
 	void	deny();
 	void	accept();
 	void	doubleClick(QListWidgetItem *);
-	void	ShowAddWindow();
-	void	ShowDelWindow();
+	void	showAddWindow();
+	void	showDelWindow();
 	void	sendAddFriendRequest();
 	void	sendDelFriendRequest();
 	void	sendRequestToServer();

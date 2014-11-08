@@ -1,8 +1,9 @@
 #include "MainMenu.h"
 
-void	MainMenu::getInfo()
-{}
-
+QString const	&MainMenu::getInfo()
+{
+	return (this->selection);
+}
 
 void	MainMenu::addElem(QString const &addField)
 {
@@ -68,8 +69,23 @@ void	MainMenu::initMenuBar()
 	this->aPropos = new QAction("A propos", this->window);
 	this->menu->addAction(this->aPropos);
 }
+void		MainMenu::doubleClick(QListWidgetItem *item)
+{
+	this->selection = item->text();
+	/*modifier QlineEdit*/
+}
 
-MainMenu::MainMenu()
+void		MainMenu::showAddWindow()
+{
+	/*modif QlineEdit*/
+}
+
+void		MainMenu::showDelWindow()
+{
+	/*modif QlineEdit*/
+}
+
+MainMenu::MainMenu(QLineEdit &action) : action(action)
 {
 	this->window = new QMainWindow(NULL);
 	this->window->setWindowTitle("Comfirole");
@@ -80,6 +96,9 @@ MainMenu::MainMenu()
 	this->window->setCentralWidget(this->widget);
 	this->initMenuBar();
 	this->setStyleSheet();
+	connect(&this->list, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(doubleClick(QListWidgetItem *)));
+	connect(this->add, SIGNAL(triggered()), this, SLOT(showAddWindow));
+	connect(this->del, SIGNAL(triggered()), this, SLOT(showDelWindow()));
 }
 
 MainMenu::~MainMenu()

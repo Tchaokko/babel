@@ -1,8 +1,13 @@
 #include "addWindow.h"
 
-void	addWindow::getInfo()
+void	addWindow::sendAddFriendRequest()
 {
-	this->addFriend = this->field1->text();
+	/*Changer le QLineEdit*/
+}
+
+QString const	&addWindow::getInfo()
+{
+	return (this->field1->text());
 }
 void	addWindow::setStyleSheet()
 {
@@ -16,7 +21,7 @@ void	addWindow::show()
 	this->widget->show();
 }
 
-addWindow::addWindow(QString &addFriend) : addFriend(addFriend)
+addWindow::addWindow(QLineEdit &action) : action(action)
 {
 	this->widget = new QWidget(NULL);
 	this->widget->setWindowTitle("Add contact");
@@ -30,7 +35,6 @@ addWindow::addWindow(QString &addFriend) : addFriend(addFriend)
 	this->widget->setLayout(this->layout);
 	connect(this->button1, SIGNAL(clicked()), this, SLOT(sendAddFriendRequest()));
 }
-
 
 addWindow::~addWindow()
 {
