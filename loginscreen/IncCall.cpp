@@ -45,6 +45,8 @@ IncCall::IncCall(QLineEdit &action) : action(action)
 	this->layout->addWidget(this->button1, 1, 0);
 	this->layout->addWidget(this->button1, 1, 1);
 	this->widget->setLayout(this->layout);
+	connect(this->button1, SIGNAL(clicked()), this, SLOT(accept()));
+	connect(this->button2, SIGNAL(clicked()), this, SLOT(deny()));
 }
 
 
