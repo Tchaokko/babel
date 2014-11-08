@@ -1,9 +1,10 @@
-#include "loginscreen.h"
+#include "WindowManager.h"
+#include <qapplication.h>
 
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	Babel		 b;
+	WindowManager		 b;
 
 	return a.exec();
 }

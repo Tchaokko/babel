@@ -16,12 +16,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_WindowManager.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_Babel.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_Babel.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_loginscreen.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -62,9 +56,6 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="APropos.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
-    <ClCompile Include="Babel.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="CallWindow.cpp">
@@ -153,9 +144,6 @@
       <Filter>garbage</Filter>
     </CustomBuild>
     <CustomBuild Include="WindowManager.h">
-      <Filter>Header</Filter>
-    </CustomBuild>
-    <CustomBuild Include="Babel.h">
       <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="loginscreen.h">
