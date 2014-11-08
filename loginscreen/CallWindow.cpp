@@ -1,65 +1,45 @@
 #include "CallWindow.h"
 
-void		CallWindow::getInfo()
+QString const	&CallWindow::getInfo()
 {
-
+	return this->label1->text();
 }
 
 void		CallWindow::setStyleSheet()
 {
-	this->windowCall->setStyleSheet("background-color: #00CED1");
-	this->windowIncoming->setStyleSheet("background-color: #00CED1");
-	this->acceptButton->setStyleSheet("background-color: #4eea58");
-	this->callButton->setStyleSheet("background-color: #4eea58");
-	this->denyButton->setStyleSheet("background-color: #ea6d4e");
+	this->widget->setStyleSheet("background-color: #00CED1");
+	this->button1->setStyleSheet("background-color: #4eea58");
 }
 
-void	CallWindow::nameLabel(const QString &name)
+void	CallWindow::setLabel(QString &name)
 {
-	this->layoutCall->addWidget(this->callButton, 1, 0);
-	this->layoutCall->addWidget(this->label, 0, 0);
-	this->label->setText(name);
-	this->windowCall->setLayout(this->layoutCall);
-	this->windowCall->show();
-
+	this->label1->setText(name);
 }
 
 void	CallWindow::show()
 {
-	this->windowIncoming->setLayout(this->layoutCall);
-	this->windowIncoming->show();
+	this->widget->show();
 }
 
-void	CallWindow::callIncoming(const QString &name)
+void	CallWindow::call()
 {
-	this->label->setText(name);
-	this->windowIncoming->setLayout(this->layoutIncoming);
-	this->show();
+	/*modifier le QLineEdit*/
+	this->widget->close();
 }
-
-CallWindow::CallWindow()
+CallWindow::CallWindow(QLineEdit &action) : action(action)
 {
-	this->windowCall = new QWidget(NULL);
-	this->windowIncoming = new QWidget(NULL);
-	this->layoutCall = new QGridLayout();
-	this->layoutIncoming = new QGridLayout();
-	this->callButton = new QPushButton("Call");
-	this->denyButton = new QPushButton("Deny");
-	this->acceptButton = new QPushButton("Accept");
-	this->label = new QLabel();
-	this->incoming = new QLabel("Incoming call from");
-	this->layoutCall->addWidget(this->callButton, 1, 0);
-	this->layoutCall->addWidget(this->label, 0, 0);
-	this->layoutIncoming->addWidget(this->incoming, 0, 0);
-	this->layoutIncoming->addWidget(this->acceptButton, 2, 0);
-	this->layoutIncoming->addWidget(this->denyButton, 3, 0);
-	this->layoutIncoming->addWidget(this->label, 1, 0);
-
+	this->widget = new QWidget(NULL);
+	this->layout = new QGridLayout();
+	this->button1 = new QPushButton("Call");
+	this->label1 = new QLabel;
+	this->layout->addWidget(this->label1, 0, 0);
+	this->layout->addWidget(this->button1, 1, 0);
 	this->setStyleSheet();
-	//this->show();
-	this->callIncoming("toto");
+	connect(this->button1, SIGNAL(clicked()), this, SLOT(call()));
 }
 
 CallWindow::~CallWindow()
 {
+	delete this->button1;
+	delete this->label1;
 }

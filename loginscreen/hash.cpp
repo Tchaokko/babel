@@ -1,5 +1,4 @@
-#include "Hash.h"
-
+#include "Hash.h" 
 
 int	Hash::hashing(const char *string)
 {

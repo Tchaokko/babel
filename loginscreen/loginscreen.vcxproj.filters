@@ -52,9 +52,6 @@
     <ClCompile Include="GeneratedFiles\Release\moc_IncCall.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Header</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_MainMenu.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -97,15 +94,21 @@
     <ClCompile Include="ParserXML.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_CallWindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_CallWindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
       <Filter>garbage</Filter>
     </ClInclude>
     <ClInclude Include="APropos.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="CallWindow.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Hash.h">
@@ -156,6 +159,9 @@
       <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="MainMenu.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="CallWindow.h">
       <Filter>Header</Filter>
     </CustomBuild>
   </ItemGroup>
