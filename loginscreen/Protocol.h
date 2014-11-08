@@ -4,37 +4,33 @@
 
 namespace Protocol
 {
-	typedef enum Spefication
+	typedef enum Specification
 	{
-		CONNECT_R = 1,
-		CONNECT_DONE,
+		CONNECT_DONE = 0,
 		CONNECT_DENIED,
-		DISCONNECT,
-		SIGN_IN,
-		CALL_D,
+		DISCONNECT_INC,
 		CALL_INCOMING,
+		DECLINED_CALL,
+		ASK_CONTACT,
+		ACCEPTED_CONTACT,
+		REFUSED_CONTACT,
+		CONNECT_REQUEST,
+		DISCONNECT_REQUEST,
+		SIGN_IN,
+		CALL_CONTACT,
 		TAKE_CALL,
 		DECLINE_CALL,
-		DECLINED_CALL,
 		ADD_CONTACT,
 		ACCEPT_CONTACT,
-		ACCEPTED_CONTACT,
 		REFUSE_CONTACT,
-		REFUSED_CONTACT,
+		CALL_DATA,
+		SERVER_CREATED,
 	}			Spef;
-
-	typedef	enum Type
-	{
-		CONNECT = 1,
-		CALL,
-		DATA,
-		CONTACT,
-	}			Type;
 
 	typedef struct RequestData
 	{
-		uint32_t	Type;
 		uint32_t	Source;
+		uint32_t	Dest;
 		uint32_t	Pwd;
 		uint32_t	Spef;
 	}				RequestData;
