@@ -106,9 +106,6 @@
     <ClCompile Include="confWindow.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="errorWindow.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_errorWindow.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -117,6 +114,12 @@
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_APropos.cpp">
       <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="errorWindow.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_errorWindow.cpp">
+      <Filter>Generated Files\Release</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -176,13 +179,13 @@
     <CustomBuild Include="CallWindow.h">
       <Filter>Header</Filter>
     </CustomBuild>
-    <CustomBuild Include="errorWindow.h">
-      <Filter>Generated Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="confWindow.h">
       <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="APropos.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="errorWindow.h">
       <Filter>Header</Filter>
     </CustomBuild>
   </ItemGroup>

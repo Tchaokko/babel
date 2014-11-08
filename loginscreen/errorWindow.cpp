@@ -21,7 +21,7 @@ void	errorWindow::show()
 	this->widget->show();
 }
 
-errorWindow::errorWindow(QLineEdit &action) : action(action)
+errorWindow::errorWindow()
 {
 	this->widget = new QWidget(NULL);
 	this->layout = new QGridLayout;
