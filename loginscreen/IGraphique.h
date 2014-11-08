@@ -11,6 +11,8 @@
 #include <QtWidgets\qgridlayout.h>
 #include <QtWidgets\qmenu.h>
 #include <QtWidgets\qmenubar.h>
+#include "InternalProtocol.h"
+#include <sstream>
 
 class IGraphique : public QObject
 {
