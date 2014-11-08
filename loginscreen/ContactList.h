@@ -24,31 +24,14 @@ public:
 	void			show2();
 	virtual	void	getInfo();
 	void			getInfo2();
-	void			initFriendList(QString &);
 private:
 	virtual void		setStyleSheet();
 	void				addElem(QString const &);
 	void				delElem(QString const &);
 
 private:
-	ParserXML			parser;
-	QString				userName;
-	QListWidget			wlist;
 	QVBoxLayout			*layout;
 	CallWindow			call;
-private:
-	QWidget				addWindow;
-	QGridLayout			addLayout;
-	QLabel				addLabel;
-	QLineEdit			addField;
-	QPushButton			addButton;
-
-private:
-	QWidget				delWindow;
-	QGridLayout			delLayout;
-	QLabel				delLabel;
-	QLineEdit			delField;
-	QPushButton			delButton;
 };
 
 #endif /*CONTACTLIST */

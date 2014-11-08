@@ -1,15 +1,15 @@
 #pragma once
 #include "IGraphique.h"
-
-class addWindow : public IGraphique
+class delWindow : public IGraphique
 {
 public:
-	addWindow(QString &);
-	virtual ~addWindow();
+	delWindow(QString &);
+	virtual ~delWindow();
 	virtual void	show();
 	virtual	void	getInfo();
 private:
 	virtual	void	setStyleSheet();
-	QString	&addFriend;
+private:
+	QString	&delFriend;
 };
 

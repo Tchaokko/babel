@@ -1,9 +1,7 @@
 #ifndef MAINMENU_H_
 # define MAINMENU_H_
 # include "IGraphique.h"
-# include "APropos.h"
-# include "ContactList.h"
-
+# include "ParserXML.hh"
 class MainMenu : public IGraphique
 {
 public:
@@ -11,23 +9,22 @@ public:
 	virtual ~MainMenu();
 	virtual void	show();
 	virtual	void	getInfo();
-	QMainWindow		*getWindow();
 	void			setUserName(QString const &);
 	void			initContactList();
+	void			addElem(QString const &);
+	void			delElem(QString const &);
 private:
 	void			initMenuBar();
 	virtual void	setStyleSheet();
 private:
 	QString		userName;
 	QMainWindow	*window;
-	QWidget		*mainWidget;
 	QMenu		*menu;
 	QAction		*add;
 	QAction		*del;
 	QAction		*aPropos;
-	APropos		*info;
-	ContactList	*list;
-	QVBoxLayout	contactLayout;
+	ParserXML	parser;
+	QListWidget	list;
 
 };
 

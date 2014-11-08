@@ -6,7 +6,17 @@ void		Babel::signIn()
 
 }
 
-void		Babel::sendConnexionRequestToServer()
+void	Babel::sendAddFriendRequest()
+{
+
+}
+
+void	Babel::sendDelFriendRequest()
+{
+
+}
+
+void		Babel::sendConnexionRequest()
 {
 
 }
@@ -31,12 +41,12 @@ void		Babel::doubleClick(QListWidgetItem*)
 
 }
 
-void		Babel::addWindowFunc()
+void		Babel::ShowAddWindow()
 {
 
 }
 
-void		Babel::delWindowFunc()
+void		Babel::ShowDelWindow()
 {
 
 }

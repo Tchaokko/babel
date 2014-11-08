@@ -5,6 +5,12 @@
 #include <HandleSocket.h>
 #include <HandleProtocol.h>
 #include <InterfaceProtocol.h>
+#include <QtWidgets\qlineedit.h>
+#include <QtWidgets\qpushbutton.h>
+#include <QtWidgets\qlabel.h>
+#include <QtWidgets\qgridlayout.h>
+#include <QtWidgets\qmenu.h>
+#include <QtWidgets\qmenubar.h>
 
 class Babel : public QObject 
 {
@@ -21,20 +27,22 @@ private:
 	HandleProtocol	protocolHandler;
 
 protected:
-	QString			field1;
-	QString			field2;
-	QString			field3;
+	QString			save1;
+	QString			save2;
+	QString			save3;
 
 protected slots:
 
 	void	signIn();
-	void	sendConnexionRequestToServer();
+	void	sendConnexionRequest();
 	void	call();
 	void	deny();
 	void	accept();
 	void	doubleClick(QListWidgetItem *);
-	void	addWindowFunc();
-	void	delWindowFunc();
+	void	ShowAddWindow();
+	void	ShowDelWindow();
+	void	sendAddFriendRequest();
+	void	sendDelFriendRequest();
 	void	sendRequestToServer();
 	void	showAPropos();
 };

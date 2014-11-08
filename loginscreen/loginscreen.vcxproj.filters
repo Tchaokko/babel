@@ -56,7 +56,10 @@
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="addWindow.cpp">
-      <Filter>Generated Files</Filter>
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="delWindow.cpp">
+      <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -82,7 +85,10 @@
       <Filter>garbage</Filter>
     </ClInclude>
     <ClInclude Include="addWindow.h">
-      <Filter>Generated Files</Filter>
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="delWindow.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
