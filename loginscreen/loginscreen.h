@@ -14,6 +14,7 @@ public:
 	virtual QString const	&getInfo();
 	QString const			&getInfo2();
 	QString const			&getInfo3();
+	void					closeLoginScreen();
 
 private:
 	QLineEdit				&action;

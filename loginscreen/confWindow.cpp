@@ -22,7 +22,7 @@ void	confWindow::show()
 void	confWindow::setStyleSheet()
 {
 	this->widget->setStyleSheet("background-color: #4eea58");
-	this->button2->setStyleSheet("background-color: #ea6d4e");
+	this->button1->setStyleSheet("background-color: #ea6d4e");
 }
 
 confWindow::confWindow(QLineEdit &action) : action(action)

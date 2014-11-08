@@ -104,15 +104,24 @@
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="confWindow.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="errorWindow.cpp">
       <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_errorWindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_confWindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_APropos.cpp">
+      <Filter>Generated Files\Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
       <Filter>garbage</Filter>
-    </ClInclude>
-    <ClInclude Include="APropos.h">
-      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Hash.h">
       <Filter>Header</Filter>
@@ -131,9 +140,6 @@
     </ClInclude>
     <ClInclude Include="Protocol.h">
       <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="confWindow.h">
-      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +174,15 @@
       <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="CallWindow.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="errorWindow.h">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="confWindow.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="APropos.h">
       <Filter>Header</Filter>
     </CustomBuild>
   </ItemGroup>

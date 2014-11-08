@@ -1,5 +1,9 @@
 #include "loginscreen.h"
 
+void		LoginScreen::closeLoginScreen()
+{
+	this->widget->close();
+}
 
 void	LoginScreen::setStyleSheet()
 {

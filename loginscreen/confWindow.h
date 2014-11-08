@@ -3,6 +3,8 @@
 class						confWindow :
 							public IGraphique
 {
+	Q_OBJECT
+
 public:
 							confWindow(QLineEdit &);
 	virtual					~confWindow();
