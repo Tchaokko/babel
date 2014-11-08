@@ -11,8 +11,10 @@ void	confWindow::hangout()
 	this->action.setText(proto);
 }
 
-QString const	&confWindow::getInfo()
-{}
+QString const	confWindow::getInfo()
+{
+	return 0;
+}
 
 void	confWindow::show()
 {

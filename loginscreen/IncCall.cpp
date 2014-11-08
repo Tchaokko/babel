@@ -5,7 +5,7 @@ void	IncCall::setLabel(QString &name)
 	this->label1->setText(name);
 }
 
-QString const	&IncCall::getInfo()
+QString const	IncCall::getInfo()
 {
 	return this->label1->text();
 }

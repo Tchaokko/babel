@@ -96,7 +96,7 @@ bool	WindowManager::processRequest(InternalProtocol::SpefSock Spef)
 void			WindowManager::checkLoginScreen()
 {
 
-	QString temp = this->checkLoginScreen.text();
+	QString temp = this->_checkLoginScreen.text();
 	QString name;
 
 	if (temp.toInt() == InternalProtocol::SpefLogin::LOG_IN)
@@ -111,7 +111,7 @@ void			WindowManager::checkLoginScreen()
 
 void			WindowManager::checkIncomningCallWindow()
 {
-	QString	temp = this->checkIncomingCallWindow.text();
+	QString	temp = this->_checkIncomingCallWindow.text();
 	if (temp.toInt() == InternalProtocol::SpefIncCallWin::ACCEPT_CALL)
 	{
 		/*tell serv */
@@ -125,7 +125,7 @@ void			WindowManager::checkIncomningCallWindow()
 
 void			WindowManager::checkMainMenu()
 {
-	QString	temp = this->checkMainMenu.text();
+	QString	temp = this->_checkMainMenu.text();
 	
 	for (int count = 1; count < 3; count++)
 	{
@@ -136,7 +136,7 @@ void			WindowManager::checkMainMenu()
 
 void			WindowManager::checkAddWindow()
 {
-	QString		temp = this->checkAddWindow.text();
+	QString		temp = this->_checkAddWindow.text();
 	QString		name;
 
 	if (temp.toInt() == InternalProtocol::SpefAddWin::ADD_CONTACT)
@@ -148,7 +148,7 @@ void			WindowManager::checkAddWindow()
 
 void			WindowManager::checkDelWindow()
 {
-	QString		temp = this->checkDelWindow.text();
+	QString		temp = this->_checkDelWindow.text();
 	QString		name;
 
 	if (temp.toInt() == InternalProtocol::SpefDelWin::DEL_CONTACT)
@@ -161,7 +161,7 @@ void			WindowManager::checkDelWindow()
 /* Check if you want to call in the window*/
 void			WindowManager::checkCallWindow()
 {
-	QString temp = this->checkCallWindow.text();
+	QString temp = this->_checkCallWindow.text();
 
 	if (temp.toInt() == InternalProtocol::SpefCallWin::CALL_CONTACT)
 	{
@@ -206,19 +206,19 @@ WindowManager::WindowManager()
 	checkMenuFunction.push_back(WindowManager::menuDelContact);
 	checkMenuFunction.push_back(WindowManager::menuCallContact);
 
-	this->windowsObject._addWindow = new addWindow(this->checkAddWindow);
-	this->windowsObject._delWindow = new delWindow(this->checkDelWindow);
-	this->windowsObject._loginScreen = new LoginScreen(this->checkLoginScreen);
-	this->windowsObject._MainMenu = new MainMenu(this->checkMainMenu);
-	this->windowsObject._incCall = new MainMenu(this->checkIncomningCallWindow);
+	this->windowsObject._addWindow = new addWindow(this->_checkAddWindow);
+	this->windowsObject._delWindow = new delWindow(this->_checkDelWindow);
+	this->windowsObject._loginScreen = new LoginScreen(this->_checkLoginScreen);
+	this->windowsObject._MainMenu = new MainMenu(this->_checkMainMenu);
+	this->windowsObject._incCall = new IncCall(this->_checkIncomingCallWindow);
 
-	connect(&this->checkProtocol, SIGNAL(textChanged(const QString &)), this, SLOT(checkProtocol()));
-	connect(&this->checkAddWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkAddWindow()));
-	connect(&this->checkMainMenu, SIGNAL(textChanged(const QString &)), this, SLOT(checkMainMenu()));
-	connect(&this->checkIncomingCallWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkIncomingCallWindow()));
-	connect(&this->checkLoginScreen, SIGNAL(textChanged(const QString &)), this, SLOT(checkLoginScreen()));
-	connect(&this->checkAddWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkAddWindow()));
-	connect(&this->checkDelWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkDelWindow()));
+	connect(&this->_checkProtocol, SIGNAL(textChanged(const QString &)), this, SLOT(checkProtocol()));
+	connect(&this->_checkAddWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkAddWindow()));
+	connect(&this->_checkMainMenu, SIGNAL(textChanged(const QString &)), this, SLOT(checkMainMenu()));
+	connect(&this->_checkIncomingCallWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkIncomingCallWindow()));
+	connect(&this->_checkLoginScreen, SIGNAL(textChanged(const QString &)), this, SLOT(checkLoginScreen()));
+	connect(&this->_checkAddWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkAddWindow()));
+	connect(&this->_checkDelWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkDelWindow()));
 }
 
 

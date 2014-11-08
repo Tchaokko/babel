@@ -8,7 +8,7 @@ public:
 	IncCall(QLineEdit &);
 	virtual					~IncCall();
 	virtual void			show();
-	virtual QString const	&getInfo();
+	virtual QString const	getInfo();
 	void					setLabel(QString &);
 private:
 	virtual void			setStyleSheet();

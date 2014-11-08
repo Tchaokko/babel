@@ -22,17 +22,17 @@ void	LoginScreen::show()
 	this->widget->show();
 }
 
-QString	const	&LoginScreen::getInfo()
+QString	const	LoginScreen::getInfo()
 {
 	return (this->field1->text());
 }
 
-QString	const	&LoginScreen::getInfo2()
+QString	const	LoginScreen::getInfo2()
 {
 	return (this->field2->text());
 }
 
-QString	const	&LoginScreen::getInfo3()
+QString	const	LoginScreen::getInfo3()
 {
 	return (this->field3->text());
 }

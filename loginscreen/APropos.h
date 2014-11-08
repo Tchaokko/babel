@@ -8,7 +8,7 @@ class						APropos : public IGraphique
 public:
 							APropos();
 	virtual					~APropos();
-	virtual QString const 	&getInfo();
+	virtual QString const 	getInfo();
 	virtual void			show();
 
 private:

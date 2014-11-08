@@ -50,13 +50,13 @@ private:
 	HandleSocket	socketHandler;
 	State			managerState;
 	wObject			windowsObject;
-	QLineEdit		checkProtocol;
-	QLineEdit		checkCallWindow;
-	QLineEdit		checkMainMenu;
-	QLineEdit		checkIncomingCallWindow;
-	QLineEdit		checkLoginScreen;
-	QLineEdit		checkAddWindow;
-	QLineEdit		checkDelWindow;
+	QLineEdit		_checkProtocol;
+	QLineEdit		_checkCallWindow;
+	QLineEdit		_checkMainMenu;
+	QLineEdit		_checkIncomingCallWindow;
+	QLineEdit		_checkLoginScreen;
+	QLineEdit		_checkAddWindow;
+	QLineEdit		_checkDelWindow;
 
 
 private:

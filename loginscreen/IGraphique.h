@@ -18,7 +18,7 @@ class IGraphique : public QObject
 {
 public:
 	virtual void	show() = 0;
-	virtual QString	const &getInfo() = 0;
+	virtual QString	const getInfo() = 0;
 protected:
 	virtual void	setStyleSheet() = 0;
 	QWidget			*widget;

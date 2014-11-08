@@ -11,7 +11,7 @@ void	addWindow::sendAddFriendRequest()
 	this->action.setText(proto);
 }
 
-QString const	&addWindow::getInfo()
+QString const	addWindow::getInfo()
 {
 	return (this->field1->text());
 }

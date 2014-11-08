@@ -10,7 +10,7 @@ public:
 	virtual					~CallWindow();
 	void					setLabel(QString &);
 	virtual	void			show();
-	virtual QString const	&getInfo();
+	virtual QString const	getInfo();
 
 private:
 	virtual void			setStyleSheet();

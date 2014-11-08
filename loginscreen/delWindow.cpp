@@ -23,7 +23,7 @@ void	delWindow::show()
 	this->widget->show();
 }
 
-QString const	&delWindow::getInfo()
+QString const	delWindow::getInfo()
 {
 	return (this->field1->text());
 }
@@ -41,7 +41,7 @@ delWindow::delWindow(QLineEdit &action) : action(action)
 	this->layout->addWidget(this->field1, 0, 1);
 	this->layout->addWidget(this->button1, 2, 0, 2, 0);
 	this->widget->setLayout(this->layout);
-	connect(this->button1, SIGNAL(clicked()), this, SLOT(sendDelFriendRequest());
+	connect(this->button1, SIGNAL(clicked()), this, SLOT(sendDelFriendRequest()));
 }
 
 

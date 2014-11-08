@@ -9,7 +9,7 @@ public:
 							confWindow(QLineEdit &);
 	virtual					~confWindow();
 	virtual void			show();
-	virtual QString const	&getInfo();
+	virtual QString const	getInfo();
 	void					setLabel(QString &);
 private:
 	virtual void			setStyleSheet();

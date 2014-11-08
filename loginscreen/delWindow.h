@@ -7,7 +7,7 @@ public:
 	delWindow(QLineEdit &);
 	virtual ~delWindow();
 	virtual void	show();
-	virtual	QString const	&getInfo();
+	virtual	QString const	getInfo();
 private:
 	virtual	void	setStyleSheet();
 private:

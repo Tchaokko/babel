@@ -6,7 +6,7 @@ class				errorWindow : public IGraphique
 public:
 							errorWindow();
 	virtual					~errorWindow();
-	virtual QString const	&getInfo();
+	virtual QString const	getInfo();
 	virtual void			show();
 	virtual void			setLabel(QString const &);
 private:

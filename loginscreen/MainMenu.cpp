@@ -1,6 +1,6 @@
 #include "MainMenu.h"
 
-QString const	&MainMenu::getInfo()
+QString const	MainMenu::getInfo()
 {
 	return (this->selection);
 }
@@ -72,7 +72,7 @@ void	MainMenu::initMenuBar()
 void		MainMenu::doubleClick(QListWidgetItem *item)
 {
 	this->selection = item->text();
-	int		nb = InternalProtocol::CALL_CONTACT;
+	int		nb = InternalProtocol::POP_CALL_CONTACT;
 	std::stringstream	stream;
 	stream << nb;
 	std::string			str(stream.str());
@@ -83,7 +83,7 @@ void		MainMenu::doubleClick(QListWidgetItem *item)
 
 void		MainMenu::showAddWindow()
 {
-	int		nb = InternalProtocol::ADD_CONTACT;
+	int		nb = InternalProtocol::POP_ADD_CONTACT;
 	std::stringstream	stream;
 	stream << nb;
 	std::string			str(stream.str());
@@ -94,7 +94,7 @@ void		MainMenu::showAddWindow()
 
 void		MainMenu::showDelWindow()
 {
-	int		nb = InternalProtocol::DEL_CONTACT;
+	int		nb = InternalProtocol::POP_DEL_CONTACT;
 	std::stringstream	stream;
 	stream << nb;
 	std::string			str(stream.str());

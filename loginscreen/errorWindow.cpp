@@ -1,5 +1,10 @@
 #include "errorWindow.h"
 
+QString const	errorWindow::getInfo()
+{
+	return 0;
+}
+
 void	errorWindow::setLabel(QString const &warning)
 {
 	this->label1->setText(warning);

@@ -1,3 +1,5 @@
+#pragma once
+
 namespace InternalProtocol
 {
 	typedef enum SpecificationSocket
@@ -22,9 +24,9 @@ namespace InternalProtocol
 	
 	typedef	enum SpecificationMainMenu
 	{
-		ADD_CONTACT = 1,
-		DEL_CONTACT,
-		CALL_CONTACT
+		POP_ADD_CONTACT = 1,
+		POP_DEL_CONTACT,
+		POP_CALL_CONTACT
 	}SpefMainMenu;
 
 	typedef enum SpecificationIncomingCallWindow

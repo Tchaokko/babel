@@ -5,8 +5,10 @@ void	APropos::closeAPropos()
 	this->widget->close();
 }
 
-QString const	&APropos::getInfo()
-{}
+QString const	APropos::getInfo()
+{
+	return 0;
+}
 
 void	APropos::show()
 {

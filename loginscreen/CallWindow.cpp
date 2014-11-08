@@ -1,6 +1,6 @@
 #include "CallWindow.h"
 
-QString const	&CallWindow::getInfo()
+QString const	CallWindow::getInfo()
 {
 	return this->label1->text();
 }
