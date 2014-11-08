@@ -7,6 +7,7 @@
 #include "addWindow.h"
 #include "delWindow.h"
 #include "loginscreen.h"
+#include "IncCall.h"
 #include <vector>
 
 class WindowManager : public QObject
@@ -28,15 +29,16 @@ public:
 private:
 	typedef struct windowObject
 	{
-		MainMenu	_MainMenu;
-		addWindow	_addWindow;
-		delWindow	_delWindow;
-		LoginScreen	_loginScreen;
+		MainMenu	*_MainMenu;
+		addWindow	*_addWindow;
+		delWindow	*_delWindow;
+		LoginScreen	*_loginScreen;
+		IncCall		*_incCall;
 	}wObject;
 
 private:
 	std::vector<void(*)(wObject&) >	checkMenuFunction;
-	std::vector<void(*)() >	processFunction;
+	std::vector<void(*)(wObject &) >	processFunction;
 private:
 
 	HandleSocket	socketHandler;
@@ -55,14 +57,14 @@ private:
 	State		getState();
 
 private:
-	static	void	connectDone();
-	static	void	connectDenied();
-	static	void	disconnectIncoming();
-	static	void	callIncoming();
-	static	void	declinedCall();
-	static	void	askContact();
-	static	void	acceptedContact();
-	static	void	refusedContact();
+	static	void	connectDone(wObject &);
+	static	void	connectDenied(wObject &);
+	static	void	disconnectIncoming(wObject &);
+	static	void	callIncoming(wObject &);
+	static	void	declinedCall(wObject &);
+	static	void	askContact(wObject &);
+	static	void	acceptedContact(wObject &);
+	static	void	refusedContact(wObject &);
 
 	static	void	connectServ(Protocol::Spef, uint32_t);
 	static	void	disconnectSend(Protocol::Spef, uint32_t);

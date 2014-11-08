@@ -1,41 +1,42 @@
 #include "WindowManager.h"
 
-void	WindowManager::connectDone()
+void	WindowManager::connectDone(wObject &_windowsObject)
 {
 
 }
 
-void	WindowManager::connectDenied()
+void	WindowManager::connectDenied(wObject &_windowsObject)
 {
 
 }
 
-void	WindowManager::disconnectIncoming()
+void	WindowManager::disconnectIncoming(wObject &_windowsObject)
 {
 
 }
 
-void	WindowManager::callIncoming()
+void	WindowManager::callIncoming(wObject &_windowsObject)
+{
+	/*_windowsObject._incCall->setLabel();     ADD LABEL RECEIVED BY TCP*/
+	_windowsObject._incCall->show();
+}
+
+void	WindowManager::declinedCall(wObject &_windowsObject)
 {
 
 }
 
-void	WindowManager::declinedCall()
+void	WindowManager::askContact(wObject &_windowsObject)
 {
 
 }
 
-void	WindowManager::askContact()
+void	WindowManager::acceptedContact(wObject &_windowsObject)
 {
 
 }
 
-void	WindowManager::acceptedContact()
-{
-
-}
-
-void	WindowManager::refusedContact()
+void	WindowManager::refusedContact(wObject &_windowsObject)
 {
 
 }
@@ -86,7 +87,7 @@ bool	WindowManager::processRequest(InternalProtocol::SpefSock Spef)
 	for (int count = 0; count < 8; count++)
 	{
 		if (Spef == count)
-			processFunction[count]();
+			processFunction[count](this->windowsObject);
 	}
 
 	return true;
@@ -101,10 +102,10 @@ void			WindowManager::checkLoginScreen()
 	if (temp.toInt() == InternalProtocol::SpefLogin::LOG_IN)
 	{
 		/*close Login screen*/
-		this->windowsObject._MainMenu.show();
-		name = this->windowsObject._loginScreen.getInfo();
-		this->windowsObject._MainMenu.setUserName(name);
-		this->windowsObject._MainMenu.initContactList();
+		this->windowsObject._MainMenu->show();
+		name = this->windowsObject._loginScreen->getInfo();
+		this->windowsObject._MainMenu->setUserName(name);
+		this->windowsObject._MainMenu->initContactList();
 	}
 }
 
@@ -117,7 +118,7 @@ void			WindowManager::checkIncomningCallWindow()
 	}
 	else if (temp.toInt() == InternalProtocol::SpefIncCallWin::DENY_CALL)
 	{
-		/*close callwindow and tell serv*/
+		/* tell serv*/
 	}
 }
 
@@ -139,7 +140,7 @@ void			WindowManager::checkAddWindow()
 
 	if (temp.toInt() == InternalProtocol::SpefAddWin::ADD_CONTACT)
 	{
-		name = this->windowsObject._addWindow.getInfo();
+		name = this->windowsObject._addWindow->getInfo();
 		/*ask server*/
 	}
 }
@@ -151,7 +152,7 @@ void			WindowManager::checkDelWindow()
 
 	if (temp.toInt() == InternalProtocol::SpefDelWin::DEL_CONTACT)
 	{
-		name = this->windowsObject._delWindow.getInfo();
+		name = this->windowsObject._delWindow->getInfo();
 		/*ask serv*/
 	}
 }
@@ -162,18 +163,19 @@ void			WindowManager::checkCallWindow()
 
 	if (temp.toInt() == InternalProtocol::SpefCallWin::CALL_CONTACT)
 	{
+		this->windowsObject._MainMenu->getInfo();
 
 	}
 }
 
 void			WindowManager::menuAddContact(wObject &windowsObject)
 {
-	windowsObject._addWindow.show();
+	windowsObject._addWindow->show();
 }
 
 void			WindowManager::menuDelContact(wObject &windowsObject)
 {
-	windowsObject._delWindow.show();
+	windowsObject._delWindow->show();
 }
 
 void			WindowManager::menuCallContact(wObject &windowObject)
@@ -196,6 +198,12 @@ WindowManager::WindowManager()
 	checkMenuFunction.push_back(WindowManager::menuAddContact);
 	checkMenuFunction.push_back(WindowManager::menuDelContact);
 	checkMenuFunction.push_back(WindowManager::menuCallContact);
+
+	this->windowsObject._addWindow = new addWindow(this->checkAddWindow);
+	this->windowsObject._delWindow = new delWindow(this->checkDelWindow);
+	this->windowsObject._loginScreen = new LoginScreen(this->checkLoginScreen);
+	this->windowsObject._MainMenu = new MainMenu(this->checkMainMenu);
+	this->windowsObject._incCall = new MainMenu(this->checkIncomningCallWindow);
 
 	connect(&this->checkProtocol, SIGNAL(textChanged(const QString &)), this, SLOT(checkProtocol()));
 	connect(&this->checkAddWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkAddWindow()));
