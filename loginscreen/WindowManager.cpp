@@ -101,7 +101,7 @@ void			WindowManager::checkLoginScreen()
 
 	if (temp.toInt() == InternalProtocol::SpefLogin::LOG_IN)
 	{
-		/*close Login screen*/
+		this->windowsObject._loginScreen->closeLoginScreen();
 		this->windowsObject._MainMenu->show();
 		name = this->windowsObject._loginScreen->getInfo();
 		this->windowsObject._MainMenu->setUserName(name);
@@ -114,7 +114,8 @@ void			WindowManager::checkIncomningCallWindow()
 	QString	temp = this->checkIncomingCallWindow.text();
 	if (temp.toInt() == InternalProtocol::SpefIncCallWin::ACCEPT_CALL)
 	{
-		/*tell serv and pop confWindow*/
+		/*tell serv */
+		this->windowsObject._incCall->show();
 	}
 	else if (temp.toInt() == InternalProtocol::SpefIncCallWin::DENY_CALL)
 	{
@@ -157,13 +158,15 @@ void			WindowManager::checkDelWindow()
 	}
 }
 
+/* Check if you want to call in the window*/
 void			WindowManager::checkCallWindow()
 {
 	QString temp = this->checkCallWindow.text();
 
 	if (temp.toInt() == InternalProtocol::SpefCallWin::CALL_CONTACT)
 	{
-		this->windowsObject._MainMenu->getInfo();
+		this->windowsObject._callWindow->getInfo();
+		/*ask Serv*/
 
 	}
 }
@@ -178,9 +181,13 @@ void			WindowManager::menuDelContact(wObject &windowsObject)
 	windowsObject._delWindow->show();
 }
 
+/*Spawn the callWindow*/
 void			WindowManager::menuCallContact(wObject &windowObject)
 {
+	QString	name;
 
+	windowObject._MainMenu->getInfo();
+	windowObject._callWindow->show();
 }
 
 void			WindowManager::setState(WindowManager::State type)
@@ -190,7 +197,7 @@ void			WindowManager::setState(WindowManager::State type)
 
 WindowManager::State			WindowManager::getState()
 {
-
+	return this->_state;
 }
 
 WindowManager::WindowManager()

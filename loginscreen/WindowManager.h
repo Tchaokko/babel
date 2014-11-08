@@ -8,6 +8,9 @@
 #include "delWindow.h"
 #include "loginscreen.h"
 #include "IncCall.h"
+#include "errorWindow.h"
+#include "APropos.h"
+#include "CallWindow.h"
 #include <vector>
 
 class WindowManager : public QObject
@@ -34,6 +37,9 @@ private:
 		delWindow	*_delWindow;
 		LoginScreen	*_loginScreen;
 		IncCall		*_incCall;
+		errorWindow	*_errorWindow;
+		APropos		*_apropos;
+		CallWindow	*_callWindow;
 	}wObject;
 
 private:
@@ -52,7 +58,9 @@ private:
 	QLineEdit		checkAddWindow;
 	QLineEdit		checkDelWindow;
 
+
 private:
+	State		_state;
 	void		setState(State );
 	State		getState();
 
