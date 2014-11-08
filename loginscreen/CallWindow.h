@@ -17,7 +17,7 @@ public:
 	virtual ~CallWindow();
 	void			nameLabel(const QString &);
 	virtual	void	show();
-	virtual void	getInfo();
+	virtual QString const	&getInfo();
 	void			callIncoming(const QString &);
 
 private:
@@ -26,8 +26,10 @@ private:
 	QLabel		*incoming;
 	QPushButton *callButton;
 	QPushButton *acceptButton;
+
 	QWidget		*windowCall;
 	QWidget		*windowIncoming;
+
 	QPushButton *denyButton;
 	QGridLayout *layoutCall;
 	QGridLayout *layoutIncoming;
