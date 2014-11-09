@@ -11,6 +11,7 @@
 #include "errorWindow.h"
 #include "APropos.h"
 #include "CallWindow.h"
+#include "confWindow.h"
 #include <vector>
 
 class WindowManager : public QObject
@@ -40,16 +41,21 @@ private:
 		errorWindow	*_errorWindow;
 		APropos		*_apropos;
 		CallWindow	*_callWindow;
+		confWindow	*_confWindow;
 	}wObject;
 
 private:
 	std::vector<void(*)(wObject&) >	checkMenuFunction;
-	std::vector<void(*)(wObject &) >	processFunction;
+	std::vector<void(*)(wObject &, char*) >	processFunction;
 private:
 
-	HandleSocket	socketHandler;
-	State			managerState;
+	HandleSocket			*socketHandler;
+	Protocol::RequestData	Request;
+private:
+	
 	wObject			windowsObject;
+	QLineEdit		_checkSocket;
+	QLineEdit		_checkConfWindow;
 	QLineEdit		_checkProtocol;
 	QLineEdit		_checkCallWindow;
 	QLineEdit		_checkMainMenu;
@@ -60,19 +66,21 @@ private:
 
 
 private:
+
+	State		managerState;
 	State		_state;
 	void		setState(State );
 	State		getState();
 
 private:
-	static	void	connectDone(wObject &);
-	static	void	connectDenied(wObject &);
-	static	void	disconnectIncoming(wObject &);
-	static	void	callIncoming(wObject &);
-	static	void	declinedCall(wObject &);
-	static	void	askContact(wObject &);
-	static	void	acceptedContact(wObject &);
-	static	void	refusedContact(wObject &);
+	static	void	connectDone(wObject &, char *);
+	static	void	connectDenied(wObject &, char *);
+	static	void	disconnectIncoming(wObject &, char *);
+	static	void	callIncoming(wObject &, char *);
+	static	void	declinedCall(wObject &, char *);
+	static	void	askContact(wObject &, char *);
+	static	void	acceptedContact(wObject &, char *);
+	static	void	refusedContact(wObject &, char *);
 
 	static	void	connectServ(Protocol::Spef, uint32_t);
 	static	void	disconnectSend(Protocol::Spef, uint32_t);
@@ -84,7 +92,7 @@ private:
 	static	void	acceptContact(Protocol::Spef, uint32_t);
 	static	void	refuseContact(Protocol::Spef, uint32_t);
 
-	virtual bool	processRequest(InternalProtocol::SpefSock);
+	virtual bool	processRequest();
 	virtual bool	sendRequest(Protocol::Spef, uint32_t);
 
 
@@ -103,5 +111,7 @@ private slots:
 	void			checkAddWindow();
 	void			checkDelWindow();
 	void			checkProtocol();
+	void			checkConfWindow();
+	void			checkSocket();
 };
 

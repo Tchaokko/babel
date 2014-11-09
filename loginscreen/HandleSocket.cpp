@@ -1,7 +1,7 @@
 #include "HandleSocket.h"
 #include "HandleProtocol.h"
 #include <iostream>
-
+#include <sstream>
 
 void		HandleSocket::processData()
 {
@@ -28,11 +28,16 @@ void		HandleSocket::processData()
 
 void		HandleSocket::processInfo()
 {
+	int nb = InternalProtocol::INC_REQUEST;
+	std::stringstream		stream;
+	stream << nb;
+	std::string				str(stream.str());
+	QString					proto(str.c_str());
 	QByteArray				buffer;
 	QHostAddress			sender;
 	quint16					senderPort;
 	Protocol::RequestData	data;
-	char					*tmp = reinterpret_cast<char*>(&data);
+	char					*tmp = reinterpret_cast<char*>(&this->Request);
 	int						count = 0;
 
 	buffer.resize(sizeof(this->Request));
@@ -46,6 +51,12 @@ void		HandleSocket::processInfo()
 			++count;
 		}
 	}
+	this->_action.setText(proto);
+}
+
+Protocol::RequestData		HandleSocket::getRequest()
+{
+	return this->Request;
 }
 
 void		HandleSocket::initSocket()
@@ -55,11 +66,10 @@ void		HandleSocket::initSocket()
 	this->tcpSocket->bind(this->hostAdress, 4045);
 }
 
-HandleSocket::HandleSocket()
+HandleSocket::HandleSocket(QLineEdit &action) : _action(action)
 {
 	this->tcpSocket = new QTcpSocket(0);
 	this->udpSocket = new QUdpSocket(0);
-
 
 	
 	connect(this->udpSocket, SIGNAL(readyRead()), this, SLOT(processData()));

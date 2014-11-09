@@ -4,6 +4,8 @@
 #include <QtWidgets\qmainwindow.h>
 #include <HandleProtocol.h>
 #include <Protocol.h>
+#include <qlineedit.h>
+#include "InternalProtocol.h"
 
 class HandleSocket : public QMainWindow
 {
@@ -11,13 +13,14 @@ class HandleSocket : public QMainWindow
 	Q_OBJECT
 
 public:
-	HandleSocket();
+	HandleSocket(QLineEdit&);
 	~HandleSocket();
 public:
-	void		initSocket();
-
+	void						initSocket();
+	Protocol::RequestData		getRequest();
 private:
 
+	QLineEdit				&_action;
 	Protocol::RequestData	Request;
 	Protocol::CallData		Call;
 	HandleProtocol			*protocolHandler;

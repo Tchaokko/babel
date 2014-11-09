@@ -29,8 +29,8 @@ namespace Protocol
 
 	typedef struct RequestData
 	{
-		uint32_t	Source;
-		uint32_t	Dest;
+		char		Source[20];
+		char		Dest[20] ;
 		uint32_t	Pwd;
 		uint32_t	Spef;
 	}				RequestData;
