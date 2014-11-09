@@ -1,5 +1,10 @@
 #include "confWindow.h"
 
+void	confWindow::closeConfW()
+{
+	this->widget->close();
+}
+
 void	confWindow::hangout()
 {
 	int		nb = InternalProtocol::HANGOUT;
