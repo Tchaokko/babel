@@ -34,6 +34,7 @@ public:
 private:
 	typedef struct		windowObject
 	{
+		ParserXML		parser;
 		MainMenu		*_MainMenu;
 		addWindow		*_addWindow;
 		delWindow		*_delWindow;

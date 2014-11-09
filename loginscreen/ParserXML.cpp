@@ -11,6 +11,11 @@ ParserXML::~ParserXML()
 
 }
 
+bool	isFriendInTheList(std::string const &)
+{
+
+}
+
 bool	ParserXML::fileIsExist(std::string const & user)
 {
 	struct stat	buffer;
@@ -79,6 +84,21 @@ std::list<std::string>	ParserXML::listOfFriend(std::string const & nameUser)
 	}
 	file.close();
 	return (friendsList);
+}
+
+bool	ParserXML::isFriendInTheList(std::string const &nameUser, std::string const &nameTarget)
+{
+	std::list<std::string>				friendsList = this->listOfFriend(nameUser);
+	std::list<std::string>::iterator	it;
+	std::string							currentFriend;
+
+	for (it = friendsList.begin(); it != friendsList.end(); ++it)
+	{
+		currentFriend = *it;
+		if (currentFriend.compare(nameTarget) == 0)
+			return true;
+	}
+	return false;
 }
 
 void		ParserXML::removeFriend(std::string const & nameFriend,
