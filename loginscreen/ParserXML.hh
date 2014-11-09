@@ -23,6 +23,7 @@ public:
 	void	createUser(std::string const &);
 	void	addFriend(std::string const &, std::string const &);
 	void	removeFriend(std::string const &, std::string const &);
+	bool	isFriendInTheList(std::string const &, std::string const &);
 	std::list<std::string>	listOfFriend(std::string const &);
 private:
 	const int	FILE_DONT_EXIST;
