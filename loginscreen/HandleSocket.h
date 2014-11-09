@@ -17,6 +17,8 @@ public:
 	~HandleSocket();
 public:
 	void						initSocket();
+	bool						initSocketTcp(QString const &ip);
+	bool						writeOnTcp();
 	Protocol::RequestData		getRequest();
 private:
 

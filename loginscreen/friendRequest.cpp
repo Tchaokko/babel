@@ -1,5 +1,10 @@
 #include "friendRequest.h"
 
+void	friendRequest::resetAction()
+{
+	this->action.clear();
+}
+
 void	friendRequest::acceptRequest()
 {
 	this->widget->close();

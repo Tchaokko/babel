@@ -3,6 +3,25 @@
 #include <iostream>
 #include <sstream>
 
+bool		HandleSocket::initSocketTcp(QString const &ip)
+{
+	this->tcpSocket = new QTcpSocket(NULL);
+
+	this->tcpSocket->abort();
+	this->tcpSocket->connectToHost(ip, 1337);
+
+	return true;
+}
+
+bool		HandleSocket::writeOnTcp()
+{
+	QByteArray	data;
+
+	data.append("tota");
+	this->tcpSocket->write(data);
+	return true;
+}
+
 void		HandleSocket::processData()
 {
 	QByteArray				buffer;

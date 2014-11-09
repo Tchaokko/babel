@@ -11,11 +11,6 @@ ParserXML::~ParserXML()
 
 }
 
-bool	isFriendInTheList(std::string const &)
-{
-
-}
-
 bool	ParserXML::fileIsExist(std::string const & user)
 {
 	struct stat	buffer;

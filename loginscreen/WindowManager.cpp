@@ -80,13 +80,13 @@ void	WindowManager::connectServ(Protocol::Spef Type, QString &name, QString &Pas
 void	WindowManager::FillRequest(Protocol::Spef type, QString &name)
 {
 	Protocol::RequestData		test;
-	int							count;
+	int							count = 0;
 
 
 	while (count < 20)
 	{
-		test.Dest[count] = name.toStdString.c_str()[count];
-		test.Source[count] = this->windowsObject._MainMenu->getUserName().toStdString().c_str[count];
+		test.Dest[count] = name.toStdString().c_str()[count];
+		test.Source[count] = this->windowsObject._MainMenu->getUserName().toStdString().c_str()[count];
 		count++;
 	}
 	test.Spef = type;
@@ -244,7 +244,7 @@ void			WindowManager::checkConfWindow()
 	QString		temp = this->_checkConfWindow.text();
 	QString		name;
 
-	if (temp.toInt == InternalProtocol::ConfWin::HANGOUT)
+	if (temp.toInt() == InternalProtocol::ConfWin::HANGOUT)
 	{
 		name = this->windowsObject._confWindow->getInfo();
 		this->FillRequest(Protocol::HANGOUT, name);
@@ -289,7 +289,8 @@ WindowManager::WindowManager()
 	this->windowsObject._friendRequest = new friendRequest(this->_checkFriendRequest);
 	
 	this->windowsObject._loginScreen->show();
-
+	this->socketHandler->initSocketTcp("127.0.0.1");
+	this->socketHandler->writeOnTcp();
 	connect(&this->_checkAddWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkAddWindow()));
 	connect(&this->_checkDelWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkDelWindow()));
 	connect(&this->_checkMainMenu, SIGNAL(textChanged(const QString &)), this, SLOT(checkMainMenu()));
