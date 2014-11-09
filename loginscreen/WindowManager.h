@@ -45,6 +45,7 @@ private:
 		CallWindow		*_callWindow;
 		confWindow		*_confWindow;
 		friendRequest	*_friendRequest;
+
 	}					wObject;
 
 private:
@@ -60,7 +61,6 @@ private:
 	wObject			windowsObject;
 	QLineEdit		_checkSocket;
 	QLineEdit		_checkConfWindow;
-	QLineEdit		_checkProtocol;
 	QLineEdit		_checkCallWindow;
 	QLineEdit		_checkMainMenu;
 	QLineEdit		_checkIncomingCallWindow;
@@ -86,17 +86,10 @@ private:
 	static	void	acceptedContact(wObject &, char *);
 	static	void	refusedContact(wObject &, char *);
 
+	void			FillRequest(Protocol::Spef, QString&);
 	void			connectServ(Protocol::Spef, QString &name, QString &Pass, QString &Ip);
-	void			signIn(Protocol::Spef, QString &name, QString &Pass, QString &Ip);
 	void			disconnectSend(Protocol::Spef, QString&);
-	void			call(QString &);
-	void			takeCall(QString&);
-	void			declineCall(QString &);
-	void			addContact(QString &);
-	void			acceptContact(QString &);
-	void			refuseContact(QString &);
-	void			deleteContact(QString &);
-
+	
 	virtual bool	processRequest();
 
 
@@ -113,7 +106,6 @@ private slots:
 	void			checkLoginScreen();
 	void			checkAddWindow();
 	void			checkDelWindow();
-	void			checkProtocol();
 	void			checkConfWindow();
 	void			checkSocket();
 	void			checkFriendRequestWindow();

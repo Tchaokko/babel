@@ -26,6 +26,7 @@ namespace Protocol
 		DELETE_CONTACT,
 		CALL_DATA,
 		SERVER_CREATED,
+		HANGOUT,
 	}			Spef;
 
 	typedef struct RequestData
