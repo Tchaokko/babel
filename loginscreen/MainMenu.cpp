@@ -69,6 +69,12 @@ void	MainMenu::initMenuBar()
 	this->aPropos = new QAction("A propos", this->window);
 	this->menu->addAction(this->aPropos);
 }
+
+void		MainMenu::resetAction()
+{
+	this->action.clear();
+}
+
 void		MainMenu::doubleClick(QListWidgetItem *item)
 {
 	this->selection = item->text();
@@ -77,7 +83,6 @@ void		MainMenu::doubleClick(QListWidgetItem *item)
 	stream << nb;
 	std::string			str(stream.str());
 	QString				proto(str.c_str());
-
 	this->action.setText(proto);
 }
 
@@ -103,6 +108,18 @@ void		MainMenu::showDelWindow()
 	this->action.setText(proto);
 }
 
+void		MainMenu::showApropos()
+{
+	int		nb = InternalProtocol::POP_APROPOS;
+	std::stringstream	stream;
+	stream << nb;
+	std::string			str(stream.str());
+	QString				proto(str.c_str());
+
+	this->action.setText(proto);
+}
+
+
 MainMenu::MainMenu(QLineEdit &action) : action(action)
 {
 	this->window = new QMainWindow(NULL);
@@ -115,8 +132,9 @@ MainMenu::MainMenu(QLineEdit &action) : action(action)
 	this->initMenuBar();
 	this->setStyleSheet();
 	connect(&this->list, SIGNAL(itemDoubleClicked(QListWidgetItem *)), this, SLOT(doubleClick(QListWidgetItem *)));
-	connect(this->add, SIGNAL(triggered()), this, SLOT(showAddWindow));
+	connect(this->add, SIGNAL(triggered()), this, SLOT(showAddWindow()));
 	connect(this->del, SIGNAL(triggered()), this, SLOT(showDelWindow()));
+	connect(this->aPropos, SIGNAL(triggered()), this, SLOT(showApropos()));
 }
 
 MainMenu::~MainMenu()

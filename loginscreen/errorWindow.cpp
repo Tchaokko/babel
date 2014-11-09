@@ -33,7 +33,8 @@ errorWindow::errorWindow()
 	this->label1 = new QLabel;
 	this->button1 = new QPushButton("Ok");
 	this->layout->addWidget(this->label1, 0, 0);
-	this->layout->addWidget(this->button1, 1, 0, 0, 4);
+	this->layout->addWidget(this->button1, 1, 0);
+	this->widget->setLayout(this->layout);
 	this->setStyleSheet();
 	connect(this->button1, SIGNAL(clicked()), this, SLOT(closeError()));
 }

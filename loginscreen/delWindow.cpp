@@ -1,5 +1,10 @@
 #include "delWindow.h"
 
+void		delWindow::resetAction()
+{
+	this->action.clear();
+}
+
 void	delWindow::sendDelFriendRequest()
 {
 	int		nb = InternalProtocol::DEL_CONTACT;

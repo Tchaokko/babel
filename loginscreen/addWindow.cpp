@@ -11,6 +11,11 @@ void	addWindow::sendAddFriendRequest()
 	this->action.setText(proto);
 }
 
+void		addWindow::resetAction()
+{
+	this->action.clear();
+}
+
 QString const	addWindow::getInfo()
 {
 	return (this->field1->text());

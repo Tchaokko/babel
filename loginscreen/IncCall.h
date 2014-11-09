@@ -10,6 +10,7 @@ public:
 	virtual void			show();
 	virtual QString const	getInfo();
 	void					setLabel(QString &);
+	void					resetAction();
 private:
 	virtual void			setStyleSheet();
 private:

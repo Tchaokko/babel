@@ -93,13 +93,15 @@ private:
 	static void		menuAddContact(wObject &);
 	static void		menuDelContact(wObject &);
 	static void		menuCallContact(wObject &);
+	static void		menuAPropos(wObject &);
 
 private slots:
 	void			checkCallWindow();
-	void			checkIncomningCallWindow();
+	void			checkIncomingCallWindow();
 	void			checkMainMenu();
 	void			checkLoginScreen();
 	void			checkAddWindow();
 	void			checkDelWindow();
+	void			checkProtocol();
 };
 

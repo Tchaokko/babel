@@ -11,6 +11,7 @@ public:
 	void					setLabel(QString &);
 	virtual	void			show();
 	virtual QString const	getInfo();
+	void					resetAction();
 
 private:
 	virtual void			setStyleSheet();

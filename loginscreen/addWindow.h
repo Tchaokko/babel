@@ -1,19 +1,20 @@
-#pragma once
-#include "IGraphique.h"
+#pragma	once
+#include					"IGraphique.h"
 
-class addWindow : public IGraphique
+class						addWindow : public IGraphique
 {
 	Q_OBJECT
 public:
-	addWindow(QLineEdit &);
-	virtual ~addWindow();
-	virtual void	show();
-	virtual	QString const getInfo();
+							addWindow(QLineEdit &);
+	virtual					~addWindow();
+	virtual void			show();
+	virtual	QString const	getInfo();
+	void					resetAction();
 private:
-	virtual	void	setStyleSheet();
+	virtual	void			setStyleSheet();
 private:
-	QLineEdit	&action;
+	QLineEdit				&action;
 private slots:
-	void			sendAddFriendRequest();
+	void					sendAddFriendRequest();
 };
 

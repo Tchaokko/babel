@@ -26,7 +26,8 @@ namespace InternalProtocol
 	{
 		POP_ADD_CONTACT = 1,
 		POP_DEL_CONTACT,
-		POP_CALL_CONTACT
+		POP_CALL_CONTACT,
+		POP_APROPOS
 	}SpefMainMenu;
 
 	typedef enum SpecificationIncomingCallWindow

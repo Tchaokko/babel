@@ -5,6 +5,11 @@ void		LoginScreen::closeLoginScreen()
 	this->widget->close();
 }
 
+void		LoginScreen::resetAction()
+{
+	this->action.clear();
+}
+
 void	LoginScreen::setStyleSheet()
 {
 	this->widget->setStyleSheet("background-color: #00CED1;");
@@ -82,11 +87,11 @@ LoginScreen::LoginScreen(QLineEdit &action) : action(action)
 	this->layout->addWidget(this->button1, 3, 0, 2, 0);
 	this->layout->addWidget(this->button2, 5, 0, 2, 0);
 	this->setStyleSheet();
-	QObject::connect(this->button2, SIGNAL(clicked()), this, SLOT(signIn()));
-	QObject::connect(this->button1, SIGNAL(clicked()), this, SLOT(sendConnexionRequestToServer()));
-	QObject::connect(this->field1, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
-	QObject::connect(this->field2, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
-	QObject::connect(this->field3, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequestToServer()));
+	QObject::connect(this->button2, SIGNAL(clicked()), this, SLOT(sendSignIn()));
+	QObject::connect(this->button1, SIGNAL(clicked()), this, SLOT(sendConnexionRequest()));
+	QObject::connect(this->field1, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequest()));
+	QObject::connect(this->field2, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequest()));
+	QObject::connect(this->field3, SIGNAL(returnPressed()), this, SLOT(sendConnexionRequest()));
 }
 
 LoginScreen::~LoginScreen()

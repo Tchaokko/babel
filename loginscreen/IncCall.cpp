@@ -46,6 +46,11 @@ void	IncCall::accept()
 	this->widget->close();
 }
 
+void		IncCall::resetAction()
+{
+	this->action.clear();
+}
+
 IncCall::IncCall(QLineEdit &action) : action(action)
 {
 	this->widget = new QWidget(NULL);
@@ -56,7 +61,7 @@ IncCall::IncCall(QLineEdit &action) : action(action)
 	this->setStyleSheet();
 	this->layout->addWidget(this->label1, 0, 0);
 	this->layout->addWidget(this->button1, 1, 0);
-	this->layout->addWidget(this->button1, 1, 1);
+	this->layout->addWidget(this->button2, 1, 1);
 	this->widget->setLayout(this->layout);
 	connect(this->button1, SIGNAL(clicked()), this, SLOT(accept()));
 	connect(this->button2, SIGNAL(clicked()), this, SLOT(deny()));

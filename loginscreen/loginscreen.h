@@ -15,6 +15,7 @@ public:
 	QString const			getInfo2();
 	QString const			getInfo3();
 	void					closeLoginScreen();
+	void					resetAction();
 
 private:
 	QLineEdit				&action;

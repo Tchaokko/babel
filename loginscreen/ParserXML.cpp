@@ -2,13 +2,13 @@
 
 ParserXML::ParserXML() : FILE_DONT_EXIST(-1)
 {
-	std::cout << "Parser created" << std::endl;
+
 }
 
 
 ParserXML::~ParserXML()
 {
-	std::cout << "Parser destroyed" << std::endl;
+
 }
 
 bool	ParserXML::fileIsExist(std::string const & user)

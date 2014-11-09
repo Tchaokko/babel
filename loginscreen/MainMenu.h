@@ -15,6 +15,7 @@ public:
 	void					initContactList();
 	void					addElem(QString const &);
 	void					delElem(QString const &);
+	void					resetAction();
 private:
 	void					initMenuBar();
 	virtual void			setStyleSheet();
@@ -33,6 +34,7 @@ private slots:
 	void					doubleClick(QListWidgetItem *);
 	void					showAddWindow();
 	void					showDelWindow();
+	void					showApropos();
 
 };
 

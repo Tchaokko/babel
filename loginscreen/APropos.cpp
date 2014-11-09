@@ -18,6 +18,7 @@ void	APropos::show()
 void	APropos::setStyleSheet()
 {
 	this->widget->setStyleSheet("background-color: #00CED1");
+	this->button1->setStyleSheet("background-color: #66e1e3;");
 }
 
 APropos::APropos()
