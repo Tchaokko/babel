@@ -46,4 +46,10 @@ namespace InternalProtocol
 		LOG_IN = 1,
 		SIGN_IN
 	}SpefLogin;
+
+	typedef enum SpeficifationFriendRequest
+	{
+		ACCEPT_F_REQUEST = 1,
+		DENY_F_REQUEST
+	}Speffirend;
 }

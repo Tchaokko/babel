@@ -118,6 +118,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_confWindow.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="friendRequest.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_friendRequest.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_friendRequest.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_loginscreen.h">
@@ -180,6 +189,9 @@
       <Filter>Header</Filter>
     </CustomBuild>
     <CustomBuild Include="errorWindow.h">
+      <Filter>Header</Filter>
+    </CustomBuild>
+    <CustomBuild Include="friendRequest.h">
       <Filter>Header</Filter>
     </CustomBuild>
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 void	confWindow::closeConfW()
 {
-	this->widget->close();
+	this->widget->close(); 
 }
 
 void	confWindow::hangout()
