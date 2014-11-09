@@ -257,6 +257,24 @@ void			WindowManager::checkConfWindow()
 
 }
 
+void			WindowManager::checkFriendRequestWindow()
+{
+	QString		temp = this->_checkAddWindow.text();
+	QString		name;
+
+	if (temp.toInt() == InternalProtocol::SpeficifationFriendRequest::ACCEPT_F_REQUEST)
+	{
+		name = this->windowsObject._friendRequest->getInfo();
+		/*ask server*/
+	}
+	else if (temp.toInt() == InternalProtocol::SpeficifationFriendRequest::DENY_F_REQUEST)
+	{
+		name = this->windowsObject._friendRequest->getInfo();
+		/*ask server*/
+	}
+	this->windowsObject._friendRequest->resetAction();
+}
+
 WindowManager::WindowManager()
 {
 	checkMenuFunction.push_back(WindowManager::menuAddContact);
@@ -274,7 +292,8 @@ WindowManager::WindowManager()
 	this->windowsObject._confWindow = new confWindow(this->_checkConfWindow);
 	this->windowsObject._apropos = new APropos;
 	this->windowsObject._errorWindow = new errorWindow;
-
+	this->windowsObject._friendRequest = new friendRequest(this->_checkFriendRequest);
+	
 	this->windowsObject._loginScreen->show();
 	connect(&this->_checkProtocol, SIGNAL(textChanged(const QString &)), this, SLOT(checkProtocol()));
 	connect(&this->_checkAddWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkAddWindow()));
@@ -283,6 +302,7 @@ WindowManager::WindowManager()
 	connect(&this->_checkIncomingCallWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkIncomingCallWindow()));
 	connect(&this->_checkLoginScreen, SIGNAL(textChanged(const QString &)), this, SLOT(checkLoginScreen()));
 	connect(&this->_checkConfWindow, SIGNAL(textChanged(const QString &)), this, SLOT(checkConfWindow()));
+	connect(&this->_checkFriendRequest, SIGNAL(textChanged(const QString &)), this, SLOT(checkFriendRequestWindow()));
 	connect(&this->_checkSocket, SIGNAL(textChanged(const QString &)), this, SLOT(checkSocket()));
 }
 

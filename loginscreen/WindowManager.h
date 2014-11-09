@@ -12,6 +12,7 @@
 #include "APropos.h"
 #include "CallWindow.h"
 #include "confWindow.h"
+#include "friendRequest.h"
 #include <vector>
 
 class WindowManager : public QObject
@@ -31,18 +32,19 @@ public:
 	~WindowManager();
 
 private:
-	typedef struct windowObject
+	typedef struct		windowObject
 	{
-		MainMenu	*_MainMenu;
-		addWindow	*_addWindow;
-		delWindow	*_delWindow;
-		LoginScreen	*_loginScreen;
-		IncCall		*_incCall;
-		errorWindow	*_errorWindow;
-		APropos		*_apropos;
-		CallWindow	*_callWindow;
-		confWindow	*_confWindow;
-	}wObject;
+		MainMenu		*_MainMenu;
+		addWindow		*_addWindow;
+		delWindow		*_delWindow;
+		LoginScreen		*_loginScreen;
+		IncCall			*_incCall;
+		errorWindow		*_errorWindow;
+		APropos			*_apropos;
+		CallWindow		*_callWindow;
+		confWindow		*_confWindow;
+		friendRequest	*_friendRequest;
+	}					wObject;
 
 private:
 	std::vector<void(*)(wObject&) >	checkMenuFunction;
@@ -63,7 +65,7 @@ private:
 	QLineEdit		_checkLoginScreen;
 	QLineEdit		_checkAddWindow;
 	QLineEdit		_checkDelWindow;
-
+	QLineEdit		_checkFriendRequest;
 
 private:
 
@@ -113,5 +115,6 @@ private slots:
 	void			checkProtocol();
 	void			checkConfWindow();
 	void			checkSocket();
+	void			checkFriendRequestWindow();
 };
 
