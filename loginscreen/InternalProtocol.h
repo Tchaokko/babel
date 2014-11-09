@@ -4,7 +4,8 @@ namespace InternalProtocol
 {
 	typedef enum SpecificationSocket
 	{
-
+		INC_REQUEST = 1,
+		INC_DATA,
 	}SpefSock;
 
 	typedef enum SpecificationConfWindow

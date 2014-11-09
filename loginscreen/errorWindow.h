@@ -9,6 +9,7 @@ public:
 	virtual QString const	getInfo();
 	virtual void			show();
 	virtual void			setLabel(QString const &);
+	virtual void			setLabel2(QString const &);
 private:
 	virtual void			setStyleSheet();
 private slots:
