@@ -11,6 +11,7 @@ public:
 	virtual void			show();
 	virtual QString const	getInfo();
 	void					setLabel(QString &);
+	void					closeConfW();
 private:
 	virtual void			setStyleSheet();
 	QLineEdit				&action;
