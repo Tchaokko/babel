@@ -55,6 +55,7 @@ private:
 	Protocol::RequestData	Request;
 private:
 	
+	Hash			_hash;
 	wObject			windowsObject;
 	QLineEdit		_checkSocket;
 	QLineEdit		_checkConfWindow;
@@ -84,19 +85,18 @@ private:
 	static	void	acceptedContact(wObject &, char *);
 	static	void	refusedContact(wObject &, char *);
 
-	static	void	connectServ(Protocol::Spef, uint32_t);
-	static	void	disconnectSend(Protocol::Spef, uint32_t);
-	static	void	signIn(Protocol::Spef, uint32_t);
-	static	void	call(Protocol::Spef, uint32_t);
-	static	void	takeCall(Protocol::Spef, uint32_t);
-	static	void	declineCall(Protocol::Spef, uint32_t);
-	static	void	addContact(Protocol::Spef, uint32_t);
-	static	void	acceptContact(Protocol::Spef, uint32_t);
-	static	void	refuseContact(Protocol::Spef, uint32_t);
+	void			connectServ(Protocol::Spef, QString &name, QString &Pass, QString &Ip);
+	void			signIn(Protocol::Spef, QString &name, QString &Pass, QString &Ip);
+	void			disconnectSend(Protocol::Spef, QString&);
+	void			call(QString &);
+	void			takeCall(QString&);
+	void			declineCall(QString &);
+	void			addContact(QString &);
+	void			acceptContact(QString &);
+	void			refuseContact(QString &);
+	void			deleteContact(QString &);
 
 	virtual bool	processRequest();
-	virtual bool	sendRequest(Protocol::Spef, uint32_t);
-
 
 
 private:

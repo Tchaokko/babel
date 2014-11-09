@@ -42,6 +42,11 @@ void	MainMenu::show()
 	this->window->show();
 }
 
+QString		&MainMenu::getUserName()
+{
+	return this->userName;
+}
+
 void	MainMenu::initContactList()
 {
 	std::list<std::string>				friendList;

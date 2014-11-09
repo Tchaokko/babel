@@ -11,6 +11,7 @@ public:
 	virtual					~MainMenu();
 	virtual void			show();
 	virtual	QString const	getInfo();
+	QString					&getUserName();
 	void					setUserName(QString const &);
 	void					initContactList();
 	void					addElem(QString const &);

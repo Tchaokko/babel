@@ -57,44 +57,152 @@ void	WindowManager::refusedContact(wObject &_windowsObject, char *name)
 
 }
 
-void	WindowManager::connectServ(Protocol::Spef Type, uint32_t Dest)
-{
 
+
+void	WindowManager::connectServ(Protocol::Spef Type, QString &name, QString &Pass, QString &Ip)
+{
+	Protocol::RequestData		test;
+	std::string					interm_name = name.toStdString();
+	char						*interm_char;
+	int							count = 0;
+	int							hashed;
+	while (count < 20)
+	{
+		test.Source[count] = interm_name.c_str()[count];
+		count++;
+	}
+	test.Pwd = this->_hash.hashing(Pass.toStdString().c_str());
+	test.Spef = Protocol::CONNECT_REQUEST;
+	//this->socketHandler->connectToServ(test, ip);
 }
 
-void	WindowManager::signIn(Protocol::Spef Type, uint32_t Dest)
+void	WindowManager::signIn(Protocol::Spef Type, QString &name, QString &Pass, QString &Ip)
 {
-
+	Protocol::RequestData		test;
+	std::string					interm_name = name.toStdString();
+	char						*interm_char;
+	int							count = 0;
+	int							hashed;
+	while (count < 20)
+	{
+		test.Source[count] = interm_name.c_str()[count];
+		count++;
+	}
+	test.Pwd = this->_hash.hashing(Pass.toStdString().c_str());
+	test.Spef = Protocol::SIGN_IN;
+	//this->socketHandler->connectToServ(test, ip);
 }
 
-void	WindowManager::call(Protocol::Spef Type, uint32_t Dest)
+void	WindowManager::call(QString &name)
 {
-
+	Protocol::RequestData		test;
+	int							count;
+	
+	
+	while (count < 20)
+	{
+		test.Dest[count] = name.toStdString.c_str()[count];
+		test.Source[count] = this->windowsObject._MainMenu->getUserName().toStdString().c_str[count];
+		count++;
+	}
+	test.Spef = Protocol::CALL_CONTACT;
+	//this->socketHandler->request(test, name);
 }
 
-void	WindowManager::takeCall(Protocol::Spef Type, uint32_t Dest)
+void	WindowManager::takeCall(QString &name)
 {
+	Protocol::RequestData		test;
+	int							count;
 
+
+	while (count < 20)
+	{
+		test.Dest[count] = name.toStdString.c_str()[count];
+		test.Source[count] = windowsObject._MainMenu->getUserName().toStdString().c_str[count];
+		count++;
+	}
+	test.Spef = Protocol::TAKE_CALL;
+	//this->socketHandler->request(test, name);
 }
 
-void	WindowManager::declineCall(Protocol::Spef Type, uint32_t Dest)
+void	WindowManager::declineCall( QString &name)
 {
+	Protocol::RequestData		test;
+	int							count;
 
+
+	while (count < 20)
+	{
+		test.Dest[count] = name.toStdString.c_str()[count];
+		test.Source[count] = windowsObject._MainMenu->getUserName().toStdString().c_str[count];
+		count++;
+	}
+	test.Spef = Protocol::DECLINE_CALL;
+	//this->socketHandler->request(test, name);
 }
 
-void	WindowManager::addContact(Protocol::Spef Type, uint32_t Dest)
+void	WindowManager::addContact( QString &name)
 {
+	Protocol::RequestData		test;
+	int							count;
 
+
+	while (count < 20)
+	{
+		test.Dest[count] = name.toStdString.c_str()[count];
+		test.Source[count] = windowsObject._MainMenu->getUserName().toStdString().c_str[count];
+		count++;
+	}
+	test.Spef = Protocol::ADD_CONTACT;
+	//this->socketHandler->request(test, name);
 }
 
-void	WindowManager::acceptContact(Protocol::Spef Type, uint32_t Dest)
+void	WindowManager::deleteContact(QString &name)
 {
+	Protocol::RequestData		test;
+	int							count;
 
+
+	while (count < 20)
+	{
+		test.Dest[count] = name.toStdString.c_str()[count];
+		test.Source[count] = windowsObject._MainMenu->getUserName().toStdString().c_str[count];
+		count++;
+	}
+	test.Spef = Protocol::DELETE_CONTACT;
+	//this->socketHandler->request(test, name);
 }
 
-void	WindowManager::refuseContact(Protocol::Spef Type, uint32_t Dest)
+void	WindowManager::acceptContact(QString &name)
 {
+	Protocol::RequestData		test;
+	int							count;
 
+
+	while (count < 20)
+	{
+		test.Dest[count] = name.toStdString.c_str()[count];
+		test.Source[count] = windowsObject._MainMenu->getUserName().toStdString().c_str[count];
+		count++;
+	}
+	test.Spef = Protocol::ACCEPT_CONTACT;
+	//this->socketHandler->request(test, name);
+}
+
+void	WindowManager::refuseContact(QString &name)
+{
+	Protocol::RequestData		test;
+	int							count;
+
+
+	while (count < 20)
+	{
+		test.Dest[count] = name.toStdString.c_str()[count];
+		test.Source[count] = windowsObject._MainMenu->getUserName().toStdString().c_str[count];
+		count++;
+	}
+	test.Spef = Protocol::REFUSE_CONTACT;
+	//this->socketHandler->request(test, name);
 }
 
 void	WindowManager::checkSocket()
@@ -125,14 +233,17 @@ void			WindowManager::checkLoginScreen()
 {
 
 	QString temp = this->_checkLoginScreen.text();
+	QString login = this->windowsObject._loginScreen->getInfo();
+	QString pass = this->windowsObject._loginScreen->getInfo2();
+	QString	ip = this->windowsObject._loginScreen->getInfo3();
 
 	if (temp.toInt() == InternalProtocol::SpefLogin::LOG_IN)
 	{
-		/*ask server*/
+		this->connectServ(Protocol::CONNECT_REQUEST, login, pass, ip);
 	}
 	else if (temp.toInt() == InternalProtocol::SpefLogin::SIGN_IN)
 	{
-		/*ask server*/
+		this->signIn(Protocol::SIGN_IN, login, pass, ip);
 	}
 	this->windowsObject._loginScreen->resetAction();
 }
@@ -140,14 +251,17 @@ void			WindowManager::checkLoginScreen()
 void			WindowManager::checkIncomingCallWindow()
 {
 	QString	temp = this->_checkIncomingCallWindow.text();
+	QString name;
+
+	name = this->windowsObject._incCall->getInfo();
 	if (temp.toInt() == InternalProtocol::SpefIncCallWin::ACCEPT_CALL)
 	{
-		/*tell serv */
+		this->takeCall(name);
 		this->windowsObject._incCall->show();
 	}
 	else if (temp.toInt() == InternalProtocol::SpefIncCallWin::DENY_CALL)
 	{
-		/* tell serv*/
+		this->declineCall(name);
 	}
 	this->windowsObject._incCall->resetAction();
 }
@@ -171,7 +285,7 @@ void			WindowManager::checkAddWindow()
 	if (temp.toInt() == InternalProtocol::SpefAddWin::ADD_CONTACT)
 	{
 		name = this->windowsObject._addWindow->getInfo();
-		/*ask server*/
+		this->addContact(name);
 		this->windowsObject._addWindow->resetAction();
 	}
 }
@@ -184,7 +298,7 @@ void			WindowManager::checkDelWindow()
 	if (temp.toInt() == InternalProtocol::SpefDelWin::DEL_CONTACT)
 	{
 		name = this->windowsObject._delWindow->getInfo();
-		/*ask serv*/
+		this->deleteContact(name);
 		this->windowsObject._addWindow->resetAction();
 	}
 }
@@ -193,12 +307,12 @@ void			WindowManager::checkDelWindow()
 void			WindowManager::checkCallWindow()
 {
 	QString temp = this->_checkCallWindow.text();
+	QString name;
 
 	if (temp.toInt() == InternalProtocol::SpefCallWin::CALL_CONTACT)
 	{
-		this->windowsObject._callWindow->getInfo();
-		/*ask Serv*/
-
+		name = this->windowsObject._callWindow->getInfo();
+		this->call(name);
 	}
 }
 
@@ -237,10 +351,6 @@ void			WindowManager::setState(WindowManager::State type)
 	this->managerState = type;
 }
 
-bool			WindowManager::sendRequest(Protocol::Spef spef, uint32_t nb)
-{
-	return true;
-}
 
 void			WindowManager::checkProtocol()
 {
@@ -265,12 +375,12 @@ void			WindowManager::checkFriendRequestWindow()
 	if (temp.toInt() == InternalProtocol::SpeficifationFriendRequest::ACCEPT_F_REQUEST)
 	{
 		name = this->windowsObject._friendRequest->getInfo();
-		/*ask server*/
+		this->addContact(name);
 	}
 	else if (temp.toInt() == InternalProtocol::SpeficifationFriendRequest::DENY_F_REQUEST)
 	{
 		name = this->windowsObject._friendRequest->getInfo();
-		/*ask server*/
+		this->refuseContact(name);
 	}
 	this->windowsObject._friendRequest->resetAction();
 }

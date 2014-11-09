@@ -23,6 +23,7 @@ namespace Protocol
 		ADD_CONTACT,
 		ACCEPT_CONTACT,
 		REFUSE_CONTACT,
+		DELETE_CONTACT,
 		CALL_DATA,
 		SERVER_CREATED,
 	}			Spef;
@@ -30,7 +31,7 @@ namespace Protocol
 	typedef struct RequestData
 	{
 		char		Source[20];
-		char		Dest[20] ;
+		char		Dest[20];
 		uint32_t	Pwd;
 		uint32_t	Spef;
 	}				RequestData;
